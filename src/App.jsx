@@ -9,29 +9,71 @@ import {
   Rocket,
   ArrowUpDown,
   X,
+  Hammer,
+  Truck,
+  Package,
+  Wrench,
+  Building2,
+  Layers,
+  ShieldCheck,
+  ClipboardCheck,
+  Route,
+  Ruler,
+  TimerReset,
+  FileCheck2,
 } from "lucide-react";
-import rawProjects from "./projects.json"; // ← dataset local
+import rawProjects from "./projects.json";
 
-// ===== Config rápido (edita aquí) =====
+import logo1 from "./assets/logos/LOGOFERREEXPRESS.jpg";
+import logo2 from "./assets/logos/LogoMacaAltaCalidad.png";
+
+/* =========================
+   CONFIGURACIÓN RÁPIDA
+========================= */
 const CONFIG = {
   nombre: "FerreExpress S.A.S.",
   lema: "Movimiento de tierras, obras civiles y alquiler de maquinaria.",
   descripcion:
     "Ejecutamos proyectos con cumplimiento, calidad y certificaciones de disposición de escombros. Servicio en Cali y ciudades aledañas.",
-  brand: {
-    primary: "#f9bf20", // Amarillo FerreExpress
-    secondary: "#111827", // Gris muy oscuro
-    light: "#fffbea",
-  },
+  brand: { primary: "#F9BF20", secondary: "#111827", light: "#fffbea" },
   contacto: {
-    telefono: "+57 3162570453 | +57 3028043116",
-    email: "ferreexpressltda@hotmail.com | expressraquel@gmail.com",
-    direccion: "Cali, Colombia | Calle 16 #76-28, Prados del limonar",
+    telefono: "+57 3162570453 · +57 3028043116",
+    email: "ferreexpressltda@hotmail.com · expressraquel@gmail.com",
+    direccion: "Cali, Colombia · Calle 16 #76-28, Prados del Limonar",
   },
   redes: { instagram: "#", linkedin: "#", web: "#" },
 };
 
-// Utilidad para formatear moneda COP
+/* =========================
+   ANIMACIONES BASE
+========================= */
+const FadeIn = ({ children, y = 14, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, delay }}
+  >
+    {children}
+  </motion.div>
+);
+
+const HoverCard = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 12, scale: 0.98 }}
+    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    whileHover={{ y: -4 }}
+    transition={{ duration: 0.5, delay }}
+    viewport={{ once: true, amount: 0.2 }}
+    className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm hover:shadow-md"
+  >
+    {children}
+  </motion.div>
+);
+
+/* =========================
+   UTILIDADES
+========================= */
 const toCOP = (n) =>
   n?.toLocaleString("es-CO", {
     style: "currency",
@@ -39,7 +81,6 @@ const toCOP = (n) =>
     maximumFractionDigits: 0,
   });
 
-// Normalizadores mínimos
 const normFecha = (s) => {
   if (!s) return "";
   const t = String(s).trim();
@@ -53,7 +94,7 @@ const normFecha = (s) => {
     if (yy.length === 2) yy = Number(yy) < 50 ? `20${yy}` : `19${yy}`;
     return `${yy}-${mm}-${dd}`;
   }
-  return t; // deja casos tipo "mayo 2016" para preservar el año
+  return t;
 };
 
 const normTipo = (v) => {
@@ -65,7 +106,6 @@ const normTipo = (v) => {
     .filter(Boolean);
 };
 
-// ===== util para normalizar textos (match imagen↔proyecto) =====
 const normalize = (s) =>
   (s || "")
     .toString()
@@ -75,6 +115,9 @@ const normalize = (s) =>
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 
+/* =========================
+   CHIPS DE TIPO
+========================= */
 function TypeBadge({ label }) {
   return (
     <span
@@ -99,26 +142,30 @@ const getTypeStyle = (t) => {
   return map[t] || "bg-gray-50 text-gray-700 border-gray-200";
 };
 
+/* =========================
+   MODAL DE PROYECTO
+========================= */
 function ProjectModal({ item, onClose }) {
-  // Accesibilidad: cerrar con Esc y bloquear scroll del body
   useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "Escape") onClose();
-    };
+    const onKey = (e) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
+    const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      document.body.style.overflow = prev;
     };
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-[60]" role="dialog" aria-modal="true">
+    <div className="fixed inset-0 z-[60]">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
       <div className="absolute inset-0 grid place-items-center p-4">
-        <div className="w-full max-w-2xl rounded-2xl bg-white border border-gray-200 shadow-xl">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="w-full max-w-2xl rounded-2xl bg-white border border-gray-200 shadow-xl"
+        >
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
             <h3 className="text-lg font-semibold text-gray-900">
               Ficha del proyecto
@@ -197,49 +244,53 @@ function ProjectModal({ item, onClose }) {
             <a
               href="#contacto"
               className="px-4 py-2 rounded-xl text-white"
-              style={{ background: CONFIG.brand.primary }}
+              style={{ background: CONFIG.brand.secondary }}
             >
               Cotizar este servicio
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 }
 
+/* =========================
+   INDICADORES
+========================= */
 function KPIs({ data }) {
   const proyectos = data.length;
   const clientes = new Set(data.map((d) => d.cliente)).size;
   const total = data.reduce((acc, d) => acc + (Number(d.valor_cop) || 0), 0);
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-      <div className="rounded-2xl border border-gray-200 p-5 bg-white">
-        <div className="text-sm text-gray-500">Proyectos</div>
-        <div className="text-3xl font-semibold">{proyectos}</div>
+    <FadeIn>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+        <div className="rounded-2xl border border-gray-200 p-5 bg-white">
+          <div className="text-sm text-gray-500">Proyectos</div>
+          <div className="text-3xl font-semibold">{proyectos}</div>
+        </div>
+        <div className="rounded-2xl border border-gray-200 p-5 bg-white">
+          <div className="text-sm text-gray-500">Clientes</div>
+          <div className="text-3xl font-semibold">{clientes}</div>
+        </div>
+        <div className="rounded-2xl border border-gray-200 p-5 bg-white">
+          <div className="text-sm text-gray-500">Total histórico</div>
+          <div className="text-2xl font-semibold">{toCOP(total)}</div>
+        </div>
       </div>
-      <div className="rounded-2xl border border-gray-200 p-5 bg-white">
-        <div className="text-sm text-gray-500">Clientes</div>
-        <div className="text-3xl font-semibold">{clientes}</div>
-      </div>
-      <div className="rounded-2xl border border-gray-200 p-5 bg-white">
-        <div className="text-sm text-gray-500">Total histórico</div>
-        <div className="text-2xl font-semibold">{toCOP(total)}</div>
-      </div>
-    </div>
+    </FadeIn>
   );
 }
 
+/* =========================
+   TABLA DE PROYECTOS
+========================= */
 function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
   const [query, setQuery] = useState("");
   const [year, setYear] = useState("");
   const [tipo, setTipo] = useState("");
-
-  // Paginación
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
-
-  // Modal
   const [selected, setSelected] = useState(null);
 
   const tipos = useMemo(
@@ -290,10 +341,7 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
     return rows;
   }, [data, query, year, tipo, sortBy, sortDir]);
 
-  // Reset página al cambiar filtros/orden
-  useEffect(() => {
-    setPage(1);
-  }, [query, year, tipo, sortBy, sortDir]);
+  useEffect(() => setPage(1), [query, year, tipo, sortBy, sortDir]);
 
   const total = filtered.length;
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
@@ -303,58 +351,54 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
 
   return (
     <div className="mt-6">
-      {/* Controles */}
-      <div className="grid md:grid-cols-5 gap-3">
-        <input
-          className="px-3 py-2 rounded-xl border border-gray-200"
-          placeholder="Buscar por cliente, obra o descripción"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          aria-label="Buscar proyectos"
-        />
-        <select
-          className="px-3 py-2 rounded-xl border border-gray-200"
-          value={year}
-          onChange={(e) => setYear(e.target.value)}
-          aria-label="Filtrar por año"
-        >
-          <option value="">Año</option>
-          {years.map((y) => (
-            <option key={y} value={y}>
-              {y}
-            </option>
-          ))}
-        </select>
-        <select
-          className="px-3 py-2 rounded-xl border border-gray-200"
-          value={tipo}
-          onChange={(e) => setTipo(e.target.value)}
-          aria-label="Filtrar por tipo de obra"
-        >
-          <option value="">Tipo de obra</option>
-          {tipos.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </select>
-        <select
-          className="px-3 py-2 rounded-xl border border-gray-200"
-          value={pageSize}
-          onChange={(e) => setPageSize(Number(e.target.value))}
-          aria-label="Tamaño de página"
-        >
-          <option value={10}>10 por página</option>
-          <option value={25}>25 por página</option>
-          <option value={50}>50 por página</option>
-          <option value={100}>100 por página</option>
-        </select>
-        <div className="px-3 py-2 rounded-xl border border-gray-200 flex items-center text-sm text-gray-600">
-          {startIdx + 1}–{endIdx} de {total}
+      <FadeIn>
+        <div className="grid md:grid-cols-5 gap-3">
+          <input
+            className="px-3 py-2 rounded-xl border border-gray-200"
+            placeholder="Buscar por cliente, obra o descripción"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <select
+            className="px-3 py-2 rounded-xl border border-gray-200"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+          >
+            <option value="">Año</option>
+            {years.map((y) => (
+              <option key={y} value={y}>
+                {y}
+              </option>
+            ))}
+          </select>
+          <select
+            className="px-3 py-2 rounded-xl border border-gray-200"
+            value={tipo}
+            onChange={(e) => setTipo(e.target.value)}
+          >
+            <option value="">Tipo de obra</option>
+            {tipos.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+          <select
+            className="px-3 py-2 rounded-xl border border-gray-200"
+            value={pageSize}
+            onChange={(e) => setPageSize(Number(e.target.value))}
+          >
+            <option value={10}>10 por página</option>
+            <option value={25}>25 por página</option>
+            <option value={50}>50 por página</option>
+            <option value={100}>100 por página</option>
+          </select>
+          <div className="px-3 py-2 rounded-xl border border-gray-200 flex items-center text-sm text-gray-600">
+            {startIdx + 1}–{endIdx} de {total}
+          </div>
         </div>
-      </div>
+      </FadeIn>
 
-      {/* Tabla */}
       <div className="mt-4 border border-gray-200 rounded-2xl overflow-hidden">
         <div className="max-h-[65vh] overflow-auto">
           <table className="min-w-full text-sm">
@@ -364,7 +408,6 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
                   <button
                     className="inline-flex items-center gap-1"
                     onClick={() => onSort("fecha")}
-                    aria-label="Ordenar por fecha"
                   >
                     Fecha <ArrowUpDown size={14} />
                   </button>
@@ -373,7 +416,6 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
                   <button
                     className="inline-flex items-center gap-1"
                     onClick={() => onSort("cliente")}
-                    aria-label="Ordenar por cliente"
                   >
                     Cliente <ArrowUpDown size={14} />
                   </button>
@@ -384,7 +426,6 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
                   <button
                     className="inline-flex items-center gap-1"
                     onClick={() => onSort("valor_cop")}
-                    aria-label="Ordenar por valor"
                   >
                     Valor <ArrowUpDown size={14} />
                   </button>
@@ -427,13 +468,6 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
                   </td>
                 </tr>
               ))}
-              {!visible.length && (
-                <tr>
-                  <td colSpan={7} className="p-6 text-center text-gray-500">
-                    No se encontraron resultados con los filtros actuales.
-                  </td>
-                </tr>
-              )}
             </tbody>
           </table>
         </div>
@@ -465,7 +499,6 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
         </div>
       </div>
 
-      {/* Modal */}
       {selected && (
         <ProjectModal item={selected} onClose={() => setSelected(null)} />
       )}
@@ -473,60 +506,136 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
   );
 }
 
-/* ===== ACTIVIDADES (secciones con carrusel + lightbox) ===== */
-function ActivitiesSection() {
-  // Carga todas las imágenes de /src/assets/obras
-  const modules = import.meta.glob(
-    "./assets/obras/**/*.{jpg,jpeg,png,webp,avif}",
-    { eager: true }
+/* =========================
+   PROYECTOS DESTACADOS
+========================= */
+function FeaturedProjects({ data }) {
+  const FEATURED = [
+    "postobon",
+    "madecentro",
+    "alkosto",
+    "papeles del cauca",
+    "pijao",
+    "colegio bolivar",
+  ];
+
+  const featured = FEATURED.map((name) => {
+    const match = data.find(
+      (d) =>
+        (d.cliente || "").toLowerCase().includes(name) ||
+        (d.obra || "").toLowerCase().includes(name)
+    );
+    return { name, item: match || null };
+  });
+
+  const Card = ({ name, item }) => (
+    <HoverCard>
+      <div
+        className="aspect-[4/3] bg-cover bg-center rounded-xl border border-gray-100"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop)",
+        }}
+      />
+      <div className="pt-4">
+        <div className="text-xs uppercase tracking-wide text-gray-500">
+          Proyecto destacado
+        </div>
+        <h3 className="mt-1 font-semibold text-gray-900">
+          {item?.obra || name.replace(/\b\w/g, (m) => m.toUpperCase())}
+        </h3>
+        <div className="text-sm text-gray-600 mt-1">
+          {item?.cliente || "Cliente"}
+        </div>
+        <div className="text-sm text-gray-700 mt-2 flex items-center justify-between">
+          <span>{item?.fecha || "—"}</span>
+          <span className="font-medium">
+            {item?.valor_cop ? toCOP(Number(item.valor_cop)) : "—"}
+          </span>
+        </div>
+      </div>
+    </HoverCard>
   );
 
-  // Agrupar por categoría: toma el nombre del archivo y le quita el número final
+  return (
+    <div className="mt-10">
+      <FadeIn>
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900">
+          Proyectos destacados
+        </h3>
+      </FadeIn>
+      <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featured.map(({ name, item }) => (
+          <Card key={name} name={name} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* =========================
+   ACTIVIDADES (carruseles)
+   (reemplaza “vialidades” → “vías”)
+========================= */
+function ActivitiesSection() {
+  const modules = import.meta.glob(
+    "./assets/obras/**/*.{jpg,jpeg,png,webp,avif}",
+    {
+      eager: true,
+    }
+  );
+
+  const prettifyCategory = (name) => {
+    let out = name;
+    out = out.replace(/vialidades/gi, "vías");
+    out = out.replace(/rigido/gi, "rígido");
+    out = out.replace(/topografia/gi, "topografía");
+    return out;
+  };
+
   const groups = useMemo(() => {
     const items = Object.entries(modules).map(([path, mod]) => {
       const file = path.split("/").pop() || "";
       const base = file.replace(/\.(jpg|jpeg|png|webp|avif)$/i, "");
-      const category = base.replace(/\s+\d+$/i, "").trim(); // ej: "MOVIMIENTOS DE TIERRA 2" → "MOVIMIENTOS DE TIERRA"
-      const numMatch = base.match(/(\d+)(?!.*\d)/); // último número
+      const rawCat = base.replace(/\s+\d+$/i, "").trim();
+      const category = prettifyCategory(rawCat);
+      const numMatch = base.match(/(\d+)(?!.*\d)/);
       const order = numMatch ? parseInt(numMatch[1], 10) : 0;
       return { src: mod.default, file, category, order };
     });
 
-    // Agrupa por categoría
     const byCat = new Map();
     for (const it of items) {
       if (!byCat.has(it.category)) byCat.set(it.category, []);
       byCat.get(it.category).push(it);
     }
 
-    // Orden: categorías alfabéticamente y fotos por número
     const result = Array.from(byCat.entries()).map(([category, arr]) => ({
       category,
       items: arr.sort(
         (a, b) => a.order - b.order || a.file.localeCompare(b.file, "es")
       ),
     }));
+
     return result.sort((a, b) =>
       a.category.localeCompare(b.category, "es", { sensitivity: "base" })
     );
   }, [modules]);
 
-  // Lightbox por categoría
+  // Lightbox
   const [open, setOpen] = useState(false);
   const [catIndex, setCatIndex] = useState(0);
   const [imgIndex, setImgIndex] = useState(0);
   const currentList = groups[catIndex]?.items ?? [];
   const current = currentList[imgIndex];
 
-  // Accesibilidad: Esc / flechas + bloqueo de scroll
   useEffect(() => {
     const onKey = (e) => {
       if (!open) return;
       if (e.key === "Escape") setOpen(false);
       if (e.key === "ArrowRight")
         setImgIndex((i) => Math.min(currentList.length - 1, i + 1));
-      if (e.key === "ArrowLeft")
-        setImgIndex((i) => Math.max(0, i - 1));
+      if (e.key === "ArrowLeft") setImgIndex((i) => Math.max(0, i - 1));
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = open ? "hidden" : "";
@@ -539,18 +648,17 @@ function ActivitiesSection() {
   if (!groups.length) return null;
 
   return (
-    <section id="actividades" className="py-16 md:py-24 bg-white">
+    <section id="actividades" className="scroll-mt-24 py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-          Actividades de obra
-        </h2>
-        <p className="mt-3 text-gray-600">
-          Evidencia fotográfica agrupada por actividad (carruseles horizontales).
-        </p>
+        <FadeIn>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+            Actividades de obra
+          </h2>
+        </FadeIn>
 
         <div className="mt-8 space-y-10">
           {groups.map((group, gi) => (
-            <div key={group.category}>
+            <FadeIn key={group.category}>
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900">
                   {group.category}
@@ -563,10 +671,9 @@ function ActivitiesSection() {
                 </a>
               </div>
 
-              {/* Carrusel horizontal */}
               <div className="flex gap-3 overflow-x-auto pb-2 snap-x">
                 {group.items.map((img, ii) => (
-                  <button
+                  <motion.button
                     key={img.file}
                     onClick={() => {
                       setCatIndex(gi);
@@ -575,6 +682,8 @@ function ActivitiesSection() {
                     }}
                     className="relative flex-none w-64 md:w-72 snap-start rounded-xl overflow-hidden border border-gray-200 bg-white"
                     aria-label={`Abrir imagen ${group.category} ${ii + 1}`}
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 240, damping: 18 }}
                   >
                     <img
                       src={img.src}
@@ -588,10 +697,10 @@ function ActivitiesSection() {
                         {group.category} #{ii + 1}
                       </div>
                     </div>
-                  </button>
+                  </motion.button>
                 ))}
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
 
@@ -600,10 +709,10 @@ function ActivitiesSection() {
           <div
             className="fixed inset-0 z-[70] bg-black/70 flex items-center justify-center p-4"
             onClick={() => setOpen(false)}
-            role="dialog"
-            aria-modal="true"
           >
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 12, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               className="max-w-5xl w-full bg-white rounded-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
@@ -625,7 +734,7 @@ function ActivitiesSection() {
                     onClick={() => setImgIndex((i) => Math.max(0, i - 1))}
                     disabled={imgIndex === 0}
                     className="m-2 rounded-full bg-white/90 px-3 py-2 text-sm shadow disabled:opacity-50"
-                    aria-label="Anterior (←)"
+                    aria-label="Anterior (→)"
                   >
                     ←
                   </button>
@@ -652,7 +761,7 @@ function ActivitiesSection() {
                   Imagen {imgIndex + 1} de {currentList.length}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         )}
       </div>
@@ -660,220 +769,96 @@ function ActivitiesSection() {
   );
 }
 
-function FeaturedProjects({ data }) {
-  // Top 3 por valor (con valor > 0)
-  const topValor = useMemo(
-    () =>
-      [...data]
-        .filter((d) => Number(d.valor_cop) > 0)
-        .sort((a, b) => Number(b.valor_cop) - Number(a.valor_cop))
-        .slice(0, 3),
-    [data]
-  );
-
-  // Top 3 más recientes (con fecha válida)
-  const topRecientes = useMemo(
-    () =>
-      [...data]
-        .filter((d) => d.fecha && /^\d{4}-\d{2}-\d{2}$/.test(d.fecha))
-        .sort((a, b) => (b.fecha || "").localeCompare(a.fecha || ""))
-        .slice(0, 3),
-    [data]
-  );
-
-  const Card = ({ item, etiqueta }) => (
-    <div className="group rounded-2xl overflow-hidden border border-gray-200 bg-white">
-      <div
-        className="aspect-[4/3] bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop)",
-        }}
-        aria-hidden="true"
-      />
-      <div className="p-4">
-        <div className="text-xs uppercase tracking-wide text-gray-500">
-          {etiqueta}
-        </div>
-        <h3 className="mt-1 font-semibold text-gray-900">
-          {item.obra || "Proyecto"}
-        </h3>
-        <div className="text-sm text-gray-600 mt-1">
-          {item.cliente || "Cliente"}
-        </div>
-        <div className="text-sm text-gray-700 mt-2 flex items-center justify-between">
-          <span>{item.fecha || "—"}</span>
-          <span className="font-medium">
-            {item.valor_cop ? toCOP(Number(item.valor_cop)) : "—"}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-
+/* =========================
+   NAVBAR FIJA (fuera del flujo)
+========================= */
+function Header() {
   return (
-    <div className="mt-10">
-      <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-        Proyectos destacados
-      </h3>
+    <header
+      role="banner"
+      className="fixed top-0 left-0 right-0 z-[100] border-b border-[#e0a90d] shadow-[0_10px_30px_-18px_rgba(17,24,39,.45)]"
+      style={{ background: "#F9BF20" }}
+    >
+      <div className="max-w-6xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+        {/* Logos más grandes */}
+        <a href="#inicio" className="flex items-center gap-3" aria-label="Ir al inicio">
+          <img
+            src={logo1}
+            alt="FerreExpress - Logo principal"
+            className="h-12 md:h-14 w-auto drop-shadow-sm"
+          />
+          <img
+            src={logo2}
+            alt="Marca asociada"
+            className="h-12 md:h-14 w-auto drop-shadow-sm"
+          />
+        </a>
 
-      <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {topValor.map((item, i) => (
-          <Card key={"valor-" + i} item={item} etiqueta="Mayor valor" />
-        ))}
-      </div>
-
-      <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {topRecientes.map((item, i) => (
-          <Card key={"reciente-" + i} item={item} etiqueta="Más reciente" />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ===== GALERÍA con Lightbox (general) ===== */
-function Gallery({ data }) {
-  // Importa todas las imágenes de /src/assets/obras con Vite
-  const modules = import.meta.glob("./assets/obras/**/*.{jpg,jpeg,png,webp,avif}", { eager: true });
-
-  const images = useMemo(() => {
-    const list = Object.entries(modules).map(([path, mod]) => {
-      const file = path.split("/").pop() || "";
-      const base = file.replace(/\.(jpg|jpeg|png|webp|avif)$/i, "");
-      const match = data.find((p) =>
-        normalize(base).includes(normalize(p.obra)) ||
-        normalize(p.obra).includes(normalize(base))
-      );
-      const alt = match ? `${match.obra} — ${match.cliente}` : base.replace(/[-_]+/g, " ");
-      return { src: mod.default, alt, project: match };
-    });
-    // Ordena por nombre de archivo para estabilidad
-    return list.sort((a, b) => a.alt.localeCompare(b.alt, "es"));
-  }, [modules, data]);
-
-  const [open, setOpen] = useState(false);
-  const [idx, setIdx] = useState(0);
-
-  // Accesibilidad: cerrar con Esc / flechas / bloquear scroll
-  useEffect(() => {
-    const onKey = (e) => {
-      if (!open) return;
-      if (e.key === "Escape") setOpen(false);
-      if (e.key === "ArrowRight") setIdx((i) => Math.min(images.length - 1, i + 1));
-      if (e.key === "ArrowLeft") setIdx((i) => Math.max(0, i - 1));
-    };
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [open, images.length]);
-
-  if (!images.length) return null;
-
-  return (
-    <section id="galeria" className="py-16 md:py-24 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Galería de obras</h2>
-        <p className="mt-3 text-gray-600">Evidencia visual de campo (lazy-load, captions y detalle).</p>
-
-        {/* Grid responsivo con aspect-ratio para evitar CLS */}
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {images.map((img, i) => (
-            <button
-              key={i}
-              onClick={() => { setIdx(i); setOpen(true); }}
-              className="group relative rounded-xl overflow-hidden border border-gray-200 bg-white"
-              aria-label={`Abrir imagen ${img.alt}`}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover transition-transform group-hover:scale-[1.02]"
-                style={{ aspectRatio: "4 / 3" }}
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-2">
-                <div className="text-xs text-white/90 truncate">{img.alt}</div>
-              </div>
-            </button>
-          ))}
-        </div>
-
-        {/* Lightbox */}
-        {open && (
-          <div
-            className="fixed inset-0 z-[60] bg-black/70 flex items-center justify-center p-4"
-            role="dialog"
-            aria-modal="true"
-            onClick={() => setOpen(false)}
+        {/* Navegación */}
+        <nav
+          className="hidden md:flex items-center gap-6 text-sm"
+          aria-label="Navegación principal"
+        >
+          <a
+            href="#quienes"
+            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
           >
-            <div
-              className="max-w-5xl w-full bg-white rounded-2xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="relative">
-                <img
-                  src={images[idx].src}
-                  alt={images[idx].alt}
-                  className="w-full h-auto object-contain bg-black"
-                  style={{ maxHeight: "70vh" }}
-                />
-                <button
-                  onClick={() => setOpen(false)}
-                  className="absolute top-2 right-2 rounded-full bg-white/90 px-3 py-1 text-sm shadow"
-                >
-                  Cerrar (Esc)
-                </button>
-                <div className="absolute inset-y-0 left-0 flex items-center">
-                  <button
-                    onClick={() => setIdx((i) => Math.max(0, i - 1))}
-                    disabled={idx === 0}
-                    className="m-2 rounded-full bg-white/90 px-3 py-2 text-sm shadow disabled:opacity-50"
-                    aria-label="Anterior (←)"
-                  >
-                    ←
-                  </button>
-                </div>
-                <div className="absolute inset-y-0 right-0 flex items-center">
-                  <button
-                    onClick={() => setIdx((i) => Math.min(images.length - 1, i + 1))}
-                    disabled={idx === images.length - 1}
-                    className="m-2 rounded-full bg-white/90 px-3 py-2 text-sm shadow disabled:opacity-50"
-                    aria-label="Siguiente (→)"
-                  >
-                    →
-                  </button>
-                </div>
-              </div>
+            Quiénes somos
+          </a>
+          <a
+            href="#capacidades"
+            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
+          >
+            Capacidades
+          </a>
+          <a
+            href="#actividades"
+            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
+          >
+            Actividades
+          </a>
+          <a
+            href="#servicios"
+            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
+          >
+            Servicios
+          </a>
+          <a
+            href="#proyectos"
+            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
+          >
+            Proyectos
+          </a>
+          <a
+            href="#contacto"
+            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
+          >
+            Contacto
+          </a>
+        </nav>
 
-              <div className="p-4 text-sm text-gray-700">
-                <div className="font-medium">{images[idx].alt}</div>
-                {images[idx].project && (
-                  <div className="mt-1 text-gray-600">
-                    {images[idx].project.fecha} · {images[idx].project.tipo?.join(", ")} ·{" "}
-                    {images[idx].project.valor_cop ? toCOP(images[idx].project.valor_cop) : "—"}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
+        {/* CTA con contraste */}
+        <a
+          href="#contacto"
+          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white shadow-md hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2"
+          style={{ background: "#111827", boxShadow: "0 8px 24px -12px rgba(17,24,39,.45)" }}
+        >
+          Cotiza ahora <ArrowRight size={18} />
+        </a>
       </div>
-    </section>
+    </header>
   );
 }
 
+/* =========================
+   APLICACIÓN PRINCIPAL
+========================= */
 export default function App() {
   const [sending, setSending] = useState(false);
   const [data, setData] = useState([]);
   const [sortBy, setSortBy] = useState("fecha");
   const [sortDir, setSortDir] = useState("asc");
 
-  // Cargar proyectos desde JSON local (importado)
   useEffect(() => {
     const clean = (rawProjects || []).map((r) => ({
       ...r,
@@ -893,9 +878,8 @@ export default function App() {
   };
 
   const toggleSort = (key) => {
-    if (sortBy === key) {
-      setSortDir(sortDir === "asc" ? "desc" : "asc");
-    } else {
+    if (sortBy === key) setSortDir(sortDir === "asc" ? "desc" : "asc");
+    else {
       setSortBy(key);
       setSortDir("asc");
     }
@@ -906,337 +890,512 @@ export default function App() {
     0
   );
 
+  /* ===== SERVICIOS (con beneficios diferenciados) ===== */
+  const servicios = [
+    {
+      titulo: "Demolición",
+      desc: "Planeación, permisos y ejecución segura.",
+      bullets: [
+        { icon: ShieldCheck, text: "Protocolos HSE y control perimetral." },
+        { icon: ClipboardCheck, text: "Gestión de permisos y actas." },
+        { icon: FileCheck2, text: "Manifiestos de RCD certificados." },
+      ],
+    },
+    {
+      titulo: "Excavaciones",
+      desc: "Excavación y conformación de terrazas.",
+      bullets: [
+        { icon: Ruler, text: "Nivelación y replanteo topográfico." },
+        { icon: Truck, text: "Flota propia para acarreo y disposición." },
+        { icon: ShieldCheck, text: "Estabilidad de taludes y drenajes." },
+      ],
+    },
+    {
+      titulo: "Movimiento de tierra",
+      desc: "Cortes, llenos y transporte.",
+      bullets: [
+        { icon: Layers, text: "Subrasante y compactación por capas." },
+        { icon: TimerReset, text: "Ejecución bajo cronograma pactado." },
+        { icon: FileCheck2, text: "Ensayos Proctor y densidades in situ." },
+      ],
+    },
+    {
+      titulo: "Urbanismo",
+      desc: "Sardineles, andenes y paisajismo.",
+      bullets: [
+        { icon: Route, text: "Trazados precisos y acabados limpios." },
+        { icon: ClipboardCheck, text: "Especificaciones y fichas técnicas." },
+        { icon: ShieldCheck, text: "Señalización y orden en obra." },
+      ],
+    },
+    {
+      titulo: "Vías",
+      desc: "Placas huella, pavimentos y subrasantes.",
+      bullets: [
+        { icon: Ruler, text: "Control de cotas y pendientes." },
+        { icon: FileCheck2, text: "Base/subbase con certificados." },
+        { icon: Hammer, text: "Juntas, curado y acabados de calidad." },
+      ],
+    },
+    {
+      titulo: "Edificaciones",
+      desc: "Obras civiles y adecuaciones.",
+      bullets: [
+        { icon: Building2, text: "Estructuras menores y muros." },
+        { icon: ClipboardCheck, text: "Control de materiales y actas." },
+        { icon: ShieldCheck, text: "Seguridad y orden en frentes." },
+      ],
+    },
+  ];
+
   return (
-    <div
-      className="min-h-screen bg-white text-gray-800"
-      style={{ scrollBehavior: "smooth" }}
-    >
-      {/* ===== NAVBAR ===== */}
-      <header className="sticky top-0 z-50 backdrop-blur bg-white/75 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <a
-            href="#inicio"
-            className="font-semibold tracking-tight text-gray-900"
-          >
-            <span
-              className="inline-block w-2.5 h-2.5 rounded-full mr-2 align-middle"
+    <>
+      <Header />{/* fijo y fuera del flujo del contenido scrollable */}
+      <main
+        className="min-h-screen bg-white text-gray-800 pt-16 md:pt-20"
+        style={{ scrollBehavior: "smooth" }}
+      >
+        {/* ===== HERO ===== */}
+        <section id="inicio" className="relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none" aria-hidden>
+            <div
+              className="absolute -top-16 -right-16 w-72 h-72 rounded-full blur-3xl opacity-20"
               style={{ background: CONFIG.brand.primary }}
             />
-            {CONFIG.nombre}
-          </a>
-          <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#servicios" className="hover:text-gray-900 text-gray-600">
-              Servicios
-            </a>
-            <a href="#actividades" className="hover:text-gray-900 text-gray-600">
-              Actividades
-            </a>
-            <a href="#proyectos" className="hover:text-gray-900 text-gray-600">
-              Proyectos
-            </a>
-            <a href="#galeria" className="hover:text-gray-900 text-gray-600">
-              Galería
-            </a>
-            <a href="#clientes" className="hover:text-gray-900 text-gray-600">
-              Clientes
-            </a>
-            <a href="#contacto" className="hover:text-gray-900 text-gray-600">
-              Contacto
-            </a>
-          </nav>
-          <a
-            href="#contacto"
-            className="hidden md:inline-flex items-center gap-2 text-white px-4 py-2 rounded-xl shadow-sm"
-            style={{ background: CONFIG.brand.primary }}
-          >
-            Cotiza ahora <ArrowRight size={18} />
-          </a>
-        </div>
-      </header>
-
-      {/* ===== HERO ===== */}
-      <section id="inicio" className="relative overflow-hidden">
-        {/* Franja de marca */}
-        <div
-          className="h-1 w-full"
-          style={{ background: CONFIG.brand.primary }}
-          aria-hidden="true"
-        />
-
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div
-            className="absolute -top-16 -right-16 w-72 h-72 rounded-full blur-3xl opacity-20"
-            style={{ background: CONFIG.brand.primary }}
-          />
-        </div>
-        <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <motion.h1
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900"
-            >
-              {CONFIG.nombre}
-            </motion.h1>
-            <p className="mt-3 text-lg md:text-xl text-gray-600">
-              {CONFIG.lema}
-            </p>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              {CONFIG.descripcion}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {[
-                "Demolición",
-                "Excavaciones",
-                "Movimiento de tierra",
-                "Urbanismo",
-                "Vías",
-                "Edificaciones",
-                "Bote de escombros certificado",
-              ].map((t) => (
-                <span
-                  key={t}
-                  className="inline-flex items-center gap-2 text-sm bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full"
-                >
-                  <Check size={16} className="text-emerald-500" /> {t}
-                </span>
-              ))}
-            </div>
-            <div className="mt-8 flex gap-3">
-              <a
-                href="#servicios"
-                className="inline-flex items-center gap-2 text-white px-5 py-3 rounded-xl shadow-sm"
-                style={{ background: CONFIG.brand.primary }}
-              >
-                Ver servicios <Rocket size={18} />
-              </a>
-              <a
-                href="#proyectos"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-gray-200"
-              >
-                Ver proyectos <ArrowRight size={18} />
-              </a>
-            </div>
           </div>
-          <div className="relative">
-            <div className="aspect-video w-full rounded-2xl border border-gray-200 overflow-hidden shadow-sm bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center" />
-            <div className="absolute -bottom-4 -right-4 bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-              <div className="text-xs text-gray-500">Total histórico</div>
-              <div className="text-2xl font-semibold">
-                {toCOP(totalHistorico) || "—"}
+
+          <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+            <FadeIn>
+              <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900"
+              >
+                {CONFIG.nombre}
+              </motion.h1>
+              <p className="mt-3 text-lg md:text-xl text-gray-700">
+                {CONFIG.lema}
+              </p>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                {CONFIG.descripcion}
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {[
+                  "Demolición",
+                  "Excavaciones",
+                  "Movimiento de tierra",
+                  "Urbanismo",
+                  "Vías",
+                  "Edificaciones",
+                  "Bote de escombros certificado",
+                ].map((t) => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center gap-2 text-sm bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full"
+                  >
+                    <Check size={16} className="text-emerald-600" /> {t}
+                  </span>
+                ))}
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ===== SERVICIOS ===== */}
-      <section id="servicios" className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-            Servicios
-          </h2>
-          <p className="mt-3 text-gray-600 max-w-2xl">
-            Selecciona lo que necesitas. También ofrecemos alquiler de
-            maquinaria, venta de materiales e interventoría.
-          </p>
-
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                titulo: "Demolición",
-                desc: "Planeación, permisos y ejecución segura.",
-              },
-              {
-                titulo: "Excavaciones",
-                desc: "Excavación y conformación de terrazas.",
-              },
-              {
-                titulo: "Movimiento de tierra",
-                desc: "Cortes, llenos, transporte.",
-              },
-              { titulo: "Urbanismo", desc: "Sardineles, andenes, paisajismo." },
-              {
-                titulo: "Vías",
-                desc: "Placas huella, pavimentos, subrasantes.",
-              },
-              {
-                titulo: "Edificaciones",
-                desc: "Obras civiles y adecuaciones.",
-              },
-            ].map((s) => (
-              <div
-                key={s.titulo}
-                className="rounded-2xl bg-white border border-gray-200 p-6 hover:shadow-sm transition-shadow"
-              >
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {s.titulo}
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">{s.desc}</p>
-                <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                  {["Equipo propio", "Cumplimiento", "Certificaciones"].map(
-                    (i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Check size={16} className="mt-0.5 text-emerald-500" />{" "}
-                        {i}
-                      </li>
-                    )
-                  )}
-                </ul>
+              <div className="mt-8 flex gap-3">
                 <a
-                  href="#contacto"
-                  className="mt-5 inline-flex items-center gap-2 text-sm px-4 py-2 rounded-xl border border-gray-200"
+                  href="#capacidades"
+                  className="inline-flex items-center gap-2 text-white px-5 py-3 rounded-xl shadow-sm hover:opacity-90"
+                  style={{ background: CONFIG.brand.secondary }}
                 >
-                  Cotizar <ArrowRight size={16} />
+                  Ver capacidades <Rocket size={18} />
+                </a>
+                <a
+                  href="#proyectos"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-gray-300 hover:bg-gray-50"
+                >
+                  Ver proyectos <ArrowRight size={18} />
                 </a>
               </div>
-            ))}
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <div className="relative">
+                <div className="aspect-video w-full rounded-2xl border border-gray-200 overflow-hidden shadow-sm bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center" />
+                <div className="absolute -bottom-4 -right-4 bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+                  <div className="text-xs text-gray-500">Total histórico</div>
+                  <div className="text-2xl font-semibold">
+                    {toCOP(totalHistorico) || "—"}
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ===== ACTIVIDADES (por categoría) ===== */}
-      <ActivitiesSection />
-
-      {/* ===== PROYECTOS ===== */}
-      <section id="proyectos" className="py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-end justify-between gap-4">
-            <div>
+        {/* ===== QUIÉNES SOMOS / MISIÓN / VISIÓN / VALORES ===== */}
+        <section id="quienes" className="scroll-mt-24 py-16 md:py-24 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4">
+            <FadeIn>
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-                Proyectos
+                Quiénes somos
+              </h2>
+              <p className="mt-3 text-gray-700 leading-relaxed">
+                FerreExpress S.A.S. es una empresa de obras civiles especializada
+                en movimiento de tierras, construcción y mantenimiento de
+                infraestructura. Contamos con equipo y operación propia
+                (maquinaria amarilla y transporte) y abastecemos materiales
+                provenientes de canteras certificadas, garantizando trazabilidad,
+                calidad de suministro y cumplimiento normativo en cada proyecto.
+                Operamos en Cali y ciudades aledañas, atendiendo clientes del
+                sector público y privado con un enfoque en seguridad,
+                productividad y sostenibilidad (gestión responsable de RCD y
+                disposición en sitios autorizados).
+              </p>
+            </FadeIn>
+
+            <div className="mt-8 grid md:grid-cols-2 gap-6">
+              <HoverCard>
+                <h3 className="text-lg font-semibold text-gray-900">Misión</h3>
+                <p className="mt-2 text-gray-700">
+                  Ejecutar con excelencia proyectos de movimiento de tierras y
+                  obras civiles, eléctricas y mecánicas, así como construcción,
+                  remodelación y mantenimiento de viviendas, edificios y vías,
+                  asegurando:
+                </p>
+                <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
+                  <li>
+                    Calidad técnica (especificaciones, ensayos y control de
+                    materiales).
+                  </li>
+                  <li>Cumplimiento en tiempos, costos y alcance.</li>
+                  <li>
+                    Seguridad y salud en el trabajo como prioridad operativa.
+                  </li>
+                  <li>
+                    Gestión ambiental responsable, con trazabilidad de materiales
+                    y disposición certificada de escombros.
+                  </li>
+                </ul>
+              </HoverCard>
+
+              <HoverCard>
+                <h3 className="text-lg font-semibold text-gray-900">Visión</h3>
+                <p className="mt-2 text-gray-700">
+                  Consolidarnos como un referente regional mediante:
+                </p>
+                <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
+                  <li>
+                    La construcción de urbanizaciones de vivienda con altos
+                    estándares de habitabilidad.
+                  </li>
+                  <li>
+                    La participación competitiva en licitaciones gubernamentales,
+                    cumpliendo requisitos técnicos, legales y de experiencia.
+                  </li>
+                  <li>
+                    El fortalecimiento de proyectos viales urbanos y rurales,
+                    ampliando capacidad operativa, flota y convenios con canteras
+                    certificadas.
+                  </li>
+                </ul>
+              </HoverCard>
+            </div>
+
+            <div className="mt-8 grid md:grid-cols-2 gap-6">
+              <HoverCard>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Nuestros valores
+                </h3>
+                <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
+                  <li>
+                    Integridad y transparencia: trazabilidad de origen y
+                    disposición.
+                  </li>
+                  <li>Seguridad ante todo: HSE como cultura, no como trámite.</li>
+                  <li>Excelencia operativa: productividad y mejora continua.</li>
+                  <li>
+                    Cumplimiento: planificación realista y reportes al cliente.
+                  </li>
+                  <li>
+                    Sostenibilidad: manejo responsable de RCD y respeto normativo.
+                  </li>
+                </ul>
+              </HoverCard>
+
+              <HoverCard>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Nuestros diferenciales
+                </h3>
+                <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
+                  <li>
+                    Equipo propio y disponibilidad: mayor control del cronograma.
+                  </li>
+                  <li>
+                    Calidad verificada: materiales con certificados y ensayos.
+                  </li>
+                  <li>
+                    Documentación al día: pólizas, hojas de vida y permisos.
+                  </li>
+                  <li>
+                    Manifiestos de disposición final y manejo responsable de RCD.
+                  </li>
+                  <li>Atención local y tiempos de respuesta ágiles.</li>
+                </ul>
+              </HoverCard>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== CAPACIDADES ===== */}
+        <section id="capacidades" className="scroll-mt-24 py-16 md:py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-4">
+            <FadeIn>
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+                Capacidades principales
               </h2>
               <p className="mt-3 text-gray-600">
-                Listado completo con búsqueda, filtros y orden.
+                Soluciones integrales de obra y suministro para acompañar todo el
+                ciclo del proyecto.
               </p>
+            </FadeIn>
+
+            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <HoverCard delay={0.02}>
+                <div className="flex items-center gap-3">
+                  <Layers size={20} />
+                  <h3 className="font-semibold text-gray-900">
+                    Movimientos de tierra
+                  </h3>
+                </div>
+                <p className="mt-2 text-sm text-gray-700">
+                  Excavación, corte, relleno, conformación de taludes, transporte
+                  y disposición.
+                </p>
+              </HoverCard>
+
+              <HoverCard delay={0.04}>
+                <div className="flex items-center gap-3">
+                  <Building2 size={20} />
+                  <h3 className="font-semibold text-gray-900">
+                    Ejecución de obras civiles
+                  </h3>
+                </div>
+                <p className="mt-2 text-sm text-gray-700">
+                  Estructuras menores, drenajes, muros, andenes y espacio público.
+                </p>
+              </HoverCard>
+
+              <HoverCard delay={0.06}>
+                <div className="flex items-center gap-3">
+                  <Wrench size={20} />
+                  <h3 className="font-semibold text-gray-900">Ferretería</h3>
+                </div>
+                <p className="mt-2 text-sm text-gray-700">
+                  Gestión de materiales desde canteras certificadas y soporte
+                  documental.
+                </p>
+              </HoverCard>
+
+              <HoverCard delay={0.08}>
+                <div className="flex items-center gap-3">
+                  <Truck size={20} />
+                  <h3 className="font-semibold text-gray-900">
+                    Alquiler de maquinaria
+                  </h3>
+                </div>
+                <p className="mt-2 text-sm text-gray-700">
+                  Retroexcavadoras, compactadores, bulldozers y más, con operador.
+                </p>
+              </HoverCard>
+
+              <HoverCard delay={0.1}>
+                <div className="flex items-center gap-3">
+                  <Package size={20} />
+                  <h3 className="font-semibold text-gray-900">
+                    Venta de materiales
+                  </h3>
+                </div>
+                <p className="mt-2 text-sm text-gray-700">
+                  Suministro confiable desde canteras de alta calidad (ensayos y
+                  certificados).
+                </p>
+              </HoverCard>
+
+              <HoverCard delay={0.12}>
+                <div className="flex items-center gap-3">
+                  <Hammer size={20} />
+                  <h3 className="font-semibold text-gray-900">Interventoría</h3>
+                </div>
+                <p className="mt-2 text-sm text-gray-700">
+                  Acompañamiento técnico y control de calidad durante la
+                  ejecución.
+                </p>
+              </HoverCard>
             </div>
           </div>
-          <FeaturedProjects data={data} />{/* destacados */}
-          <KPIs data={data} />
-          <ProjectsExplorer
-            data={data}
-            onSort={toggleSort}
-            sortBy={sortBy}
-            sortDir={sortDir}
-          />
-        </div>
-      </section>
+        </section>
 
-      {/* ===== GALERÍA (general) ===== */}
-      <Gallery data={data} />
+        {/* ===== ACTIVIDADES (CARRUSELES) ===== */}
+        <ActivitiesSection />
 
-      {/* ===== CLIENTES ===== */}
-      <section id="clientes" className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-            Clientes & Confianza
-          </h2>
-        </div>
-        <div className="max-w-6xl mx-auto px-4 mt-8 grid md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((n) => (
-            <figure
-              key={n}
-              className="rounded-2xl bg-white border border-gray-200 p-6"
-            >
-              <blockquote className="text-gray-700">
-                "Excelente trabajo, comunicación clara y cumplimiento."
-              </blockquote>
-              <figcaption className="mt-4 text-sm text-gray-500">
-                Empresa {n} · Sector
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+        {/* ===== SERVICIOS ===== */}
+        <section id="servicios" className="scroll-mt-24 py-16 md:py-24 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4">
+            <FadeIn>
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+                Servicios
+              </h2>
+              <p className="mt-3 text-gray-600 max-w-2xl">
+                Selecciona lo que necesitas. También ofrecemos alquiler de
+                maquinaria, venta de materiales e interventoría.
+              </p>
+            </FadeIn>
 
-      {/* ===== CONTACTO ===== */}
-      <section id="contacto" className="py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-10">
-          <div className="md:col-span-2">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-              Hablemos
-            </h2>
-            <p className="mt-3 text-gray-600">
-              Cuéntanos tu idea y armamos una propuesta.
-            </p>
-
-            <div className="mt-6 space-y-3 text-sm">
-              <div className="flex items-center gap-2">
-                <Phone size={16} /> {CONFIG.contacto.telefono}
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail size={16} /> {CONFIG.contacto.email}
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin size={16} /> {CONFIG.contacto.direccion}
-              </div>
+            <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {servicios.map((s, idx) => (
+                <HoverCard key={s.titulo} delay={idx * 0.04}>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {s.titulo}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-600">{s.desc}</p>
+                  <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                    {s.bullets.map(({ icon: Icon, text }) => (
+                      <li key={text} className="flex items-start gap-2">
+                        <Icon size={16} className="mt-0.5 text-emerald-600" />{" "}
+                        {text}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="#contacto"
+                    className="mt-5 inline-flex items-center gap-2 text-sm px-4 py-2 rounded-xl border border-gray-200"
+                  >
+                    Cotizar <ArrowRight size={16} />
+                  </a>
+                </HoverCard>
+              ))}
             </div>
           </div>
+        </section>
 
-          <div className="md:col-span-3">
-            <form
-              onSubmit={handleSubmit}
-              className="rounded-2xl border border-gray-200 p-6"
-            >
-              <div className="grid md:grid-cols-2 gap-4">
+        {/* ===== PROYECTOS ===== */}
+        <section id="proyectos" className="scroll-mt-24 py-16 md:py-24">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex items-end justify-between gap-4">
+              <FadeIn>
                 <div>
-                  <label className="text-sm text-gray-600">Nombre</label>
-                  <input
-                    className="w-full mt-1 px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2"
-                    placeholder="Tu nombre"
-                  />
+                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+                    Proyectos
+                  </h2>
+                  <p className="mt-3 text-gray-600">
+                    Listado completo con búsqueda, filtros y orden.
+                  </p>
                 </div>
-                <div>
-                  <label className="text-sm text-gray-600">Correo</label>
-                  <input
-                    type="email"
-                    className="w-full mt-1 px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2"
-                    placeholder="tu@correo.com"
-                  />
+              </FadeIn>
+            </div>
+
+            <FeaturedProjects data={data} />
+            <KPIs data={data} />
+            <ProjectsExplorer
+              data={data}
+              onSort={toggleSort}
+              sortBy={sortBy}
+              sortDir={sortDir}
+            />
+          </div>
+        </section>
+
+        {/* ===== CONTACTO (más ancho) ===== */}
+        <section id="contacto" className="scroll-mt-24 py-16 md:py-24">
+          <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-7">
+            <FadeIn>
+              <div className="lg:col-span-1">
+                <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+                  Hablemos!
+                </h2>
+                <p className="mt-3 text-gray-600">
+                  Cuéntanos tu idea y armamos una propuesta.
+                </p>
+
+                <div className="mt-6 space-y-3 text-sm">
+                  <div className="flex items-center gap-2">
+                    <Phone size={16} /> {CONFIG.contacto.telefono}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail size={16} /> {CONFIG.contacto.email}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin size={16} /> {CONFIG.contacto.direccion}
+                  </div>
                 </div>
               </div>
-              <div className="mt-4">
-                <label className="text-sm text-gray-600">Mensaje</label>
-                <textarea
-                  rows={4}
-                  className="w-full mt-1 px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2"
-                  placeholder="Cuéntanos sobre tu proyecto"
-                />
-              </div>
-              <button
-                type="submit"
-                className="mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white"
-                style={{ background: CONFIG.brand.primary }}
-                disabled={sending}
-              >
-                {sending ? "Enviando…" : "Enviar mensaje"}
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+            </FadeIn>
 
-      {/* ===== FOOTER ===== */}
-      <footer className="border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="text-gray-500">
-            © {new Date().getFullYear()} {CONFIG.nombre}. Todos los derechos
-            reservados.
+            <FadeIn delay={0.05}>
+              <div className="lg:col-span-2">
+                <form
+                  onSubmit={handleSubmit}
+                  className="rounded-2xl border border-gray-200 p-6"
+                >
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm text-gray-600">Nombre</label>
+                      <input
+                        className="w-full mt-1 px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2"
+                        placeholder="Tu nombre"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm text-gray-600">Correo</label>
+                      <input
+                        type="email"
+                        className="w-full mt-1 px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2"
+                        placeholder="tu@correo.com"
+                      />
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <label className="text-sm text-gray-600">Mensaje</label>
+                    <textarea
+                      rows={6}
+                      className="w-full mt-1 px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2"
+                      placeholder="Cuéntanos sobre tu proyecto"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white hover:opacity-90"
+                    style={{ background: CONFIG.brand.secondary }}
+                    disabled={sending}
+                  >
+                    {sending ? "Enviando…" : "Enviar mensaje"}
+                  </button>
+                </form>
+              </div>
+            </FadeIn>
           </div>
-          <div className="flex items-center gap-4 text-gray-500">
-            <a href={CONFIG.redes.instagram} className="hover:text-gray-900">
-              Instagram
-            </a>
-            <a href={CONFIG.redes.linkedin} className="hover:text-gray-900">
-              LinkedIn
-            </a>
-            <a href={CONFIG.redes.web} className="hover:text-gray-900">
-              Sitio web
-            </a>
+        </section>
+
+        {/* ===== FOOTER ===== */}
+        <footer className="border-t border-gray-100">
+          <div className="max-w-6xl mx-auto px-4 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
+            <div className="text-gray-500">
+              © {new Date().getFullYear()} {CONFIG.nombre} Todos los derechos
+              reservados.
+            </div>
+            <div className="flex items-center gap-4 text-gray-500">
+              <a href={CONFIG.redes.instagram} className="hover:text-gray-900">
+                Instagram
+              </a>
+              <a href={CONFIG.redes.linkedin} className="hover:text-gray-900">
+                LinkedIn
+              </a>
+              <a href={CONFIG.redes.web} className="hover:text-gray-900">
+                Sitio web
+              </a>
+            </div>
           </div>
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </main>
+    </>
   );
 }
