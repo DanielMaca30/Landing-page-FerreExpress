@@ -1,30 +1,30 @@
 [
   {
     "fecha": "2004-07-10",
-    "cliente": "consorcio matta",
+    "cliente": "Consorcio Matta",
     "obra": "calle 25 cra 80",
     "valor_cop": 80213000,
     "tipo": [
       "Llenos"
     ],
-    "descripcion": "LLENOS CON ROCA MUERTA Dr. Matta",
-    "contacto": "Dr. Matta"
+    "descripcion": "Llenos CON ROCA MUERTA. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
+    "contacto": "Matta — Dr"
   },
   {
     "fecha": "2005-07-01",
-    "cliente": "construcciones y servicios S.A",
+    "cliente": "Construcciones Y Servicios S.A.",
     "obra": "CORBETA NACIONAL DE CHOCOLATES",
     "valor_cop": 194696266,
     "tipo": [
       "Excavación",
       "Llenos"
     ],
-    "descripcion": "EXCAVACION LLENOS BASE ARQ. ELIZABTEH FALLON",
-    "contacto": "ARQ. ELIZABTEH FALLON"
+    "descripcion": "Excavación Llenos BASE. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
+    "contacto": "ELIZABTEH FALLON — Arq"
   },
   {
     "fecha": "2006-09-14",
-    "cliente": "divecon S.A",
+    "cliente": "Divecon S.A.",
     "obra": "torres de comfandi",
     "valor_cop": 230524850,
     "tipo": [
@@ -32,116 +32,116 @@
       "Excavación",
       "Vías"
     ],
-    "descripcion": "excavación base granular pavimentos ING DIEGO VELASCO",
-    "contacto": "ING DIEGO VELASCO"
+    "descripcion": "Excavación Base granular pavimentos. Suministro, extendido y compactación de base granular (B-200) con control de espesores y densidades. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Estructura de pavimento, perfilado, mejoramiento de subrasante y señalización básica.",
+    "contacto": "DIEGO VELASCO — Ing"
   },
   {
     "fecha": "2005-12-05",
-    "cliente": "cachibi s.a.",
+    "cliente": "Cachibi S.A..",
     "obra": "ciudad jardín",
     "valor_cop": 14143368,
     "tipo": [
       "Vías"
     ],
-    "descripcion": "pavimento asfalto Dra. nidia milena gallardo",
-    "contacto": "Dra. nidia milena gallardo"
+    "descripcion": "Pavimento en asfalto. Estructura de pavimento, perfilado, mejoramiento de subrasante y señalización básica.",
+    "contacto": "nidia milena gallardo — Dra"
   },
   {
     "fecha": "2006-02-20",
-    "cliente": "conconcreto",
+    "cliente": "Conconcreto",
     "obra": "lomas de menga",
     "valor_cop": 35000000,
     "tipo": [
       "Demolición",
       "Excavación"
     ],
-    "descripcion": "excavación y demolición Ing. Fabio Arcila",
-    "contacto": "Ing. Fabio Arcila"
+    "descripcion": "Excavación y Demolición. Demolición controlada, segregación de residuos y gestión RCD conforme a normativa local. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado.",
+    "contacto": "Fabio Arcila — Ing"
   },
   {
     "fecha": "2006-02-13",
-    "cliente": "Hernández bohomer constructores",
+    "cliente": "Hernández Bohomer Constructores",
     "obra": "palmas mall",
     "valor_cop": 16000000,
     "tipo": [
       "Demolición"
     ],
-    "descripcion": "demolición casa Ing. diego herrera",
-    "contacto": "Ing. diego herrera"
+    "descripcion": "Demolición casa. Demolición controlada, segregación de residuos y gestión RCD conforme a normativa local.",
+    "contacto": "diego herrera — Ing"
   },
   {
     "fecha": "2006-02-21",
-    "cliente": "divecon S.A",
+    "cliente": "Divecon S.A.",
     "obra": "UNILEVER",
     "valor_cop": 21000000,
     "tipo": [
       "Demolición"
     ],
-    "descripcion": "DESCAPOTE ING ANA LUZ PIAMBA",
-    "contacto": "ING ANA LUZ PIAMBA"
+    "descripcion": "DESCAPOTE. Demolición controlada, segregación de residuos y gestión RCD conforme a normativa local.",
+    "contacto": "ANA LUZ PIAMBA — Ing"
   },
   {
     "fecha": "2006-03-02",
-    "cliente": "Hernández bohomer constructores",
+    "cliente": "Hernández Bohomer Constructores",
     "obra": "palmas mall",
     "valor_cop": 60000000,
     "tipo": [
       "Llenos"
     ],
-    "descripcion": "LLENOS CON ROCA MUERTA ing diego herrera",
-    "contacto": "ing diego herrera"
+    "descripcion": "Llenos CON ROCA MUERTA. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
+    "contacto": "diego herrera — Ing"
   },
   {
     "fecha": "2006-04-24",
-    "cliente": "CARREFOUR",
+    "cliente": "Carrefour",
     "obra": "HIPERMERCADO CARREFOUR",
     "valor_cop": 198000000,
     "tipo": [
       "Base granular",
       "Llenos"
     ],
-    "descripcion": "LLENOS ROCA Y BASE GRANULAR ING. RODRIGO QUINTERO",
-    "contacto": "ING. RODRIGO QUINTERO"
+    "descripcion": "Llenos ROCA Y Base granular. Suministro, extendido y compactación de base granular (B-200) con control de espesores y densidades. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
+    "contacto": "RODRIGO QUINTERO — Ing"
   },
   {
     "fecha": "2007-09-01",
-    "cliente": "",
-    "obra": "PLANTA POSTOBON",
+    "cliente": "Conconcreto S.A",
+    "obra": "Llenado Base Granular Planta Postobon",
     "valor_cop": 2381764045,
     "tipo": [
       "Base granular",
       "Llenos"
     ],
-    "descripcion": "LLENOS BASE GRANULAR ARQ RODRIGO RUIZ ALBAN TELEFONO",
-    "contacto": "ARQ RODRIGO RUIZ ALBAN"
+    "descripcion": "Llenos Base granular TELEFONO. Suministro, extendido y compactación de base granular (B-200) con control de espesores y densidades. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
+    "contacto": "RODRIGO RUIZ ALBAN — Arq"
   },
   {
     "fecha": "2009-06-01",
-    "cliente": "POSTOBON S.A",
+    "cliente": "Postobon S.A.",
     "obra": "AMPLIACION PETAR",
     "valor_cop": 58896501,
     "tipo": [
       "Excavación",
       "Llenos"
     ],
-    "descripcion": "EXCAVACION Y LLENOS ING GENARO GARCIA",
-    "contacto": "ING GENARO GARCIA"
+    "descripcion": "Excavación Y Llenos. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
+    "contacto": "GENARO GARCIA — Ing"
   },
   {
     "fecha": "2007-08-21",
-    "cliente": "PIJAO",
-    "obra": "MONTICELLO",
+    "cliente": "Monticello Pijao",
+    "obra": "Obra Condominio Monticello",
     "valor_cop": 301900000,
     "tipo": [
       "Excavación",
       "Llenos"
     ],
-    "descripcion": "EXCAVACION Y LLENOS ARQ ALVARO LOPEZ 3016180184",
-    "contacto": "ARQ ALVARO LOPEZ"
+    "descripcion": "Excavación Y Llenos. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
+    "contacto": "ALVARO LOPEZ — Arq"
   },
   {
     "fecha": "2007-04-03",
-    "cliente": "Hernández bohomer constructores",
+    "cliente": "Hernández Bohomer Constructores",
     "obra": "LAGOS CLUB",
     "valor_cop": 250000000,
     "tipo": [
@@ -149,24 +149,24 @@
       "Llenos",
       "Vías"
     ],
-    "descripcion": "EXCAVACION Y LLENOS PAVIMENTOS ING DIEGO HERRERA",
-    "contacto": "ING DIEGO HERRERA"
+    "descripcion": "Excavación Y Llenos PAVIMENTOS. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima. Estructura de pavimento, perfilado, mejoramiento de subrasante y señalización básica.",
+    "contacto": "DIEGO HERRERA — Ing"
   },
   {
     "fecha": "2010-09-09",
-    "cliente": "IBICO CONSTRUCCIONES",
+    "cliente": "Ibico Construcciones",
     "obra": "RESERVA LIMONAR",
     "valor_cop": 123464425,
     "tipo": [
       "Excavación",
       "Llenos"
     ],
-    "descripcion": "EXCAVACION Y LLENOS ING INGRID COLLAZOS",
-    "contacto": "ING INGRID COLLAZO"
+    "descripcion": "Excavación Y Llenos S. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
+    "contacto": "INGRID COLLAZO — Ing"
   },
   {
     "fecha": "2012-06-27",
-    "cliente": "CONSTRUCTORA 180 GRADOS",
+    "cliente": "Constructora 180 Grados",
     "obra": "APARTAMENTOS",
     "valor_cop": 89000000,
     "tipo": [
@@ -174,1236 +174,1236 @@
       "Llenos",
       "Vías"
     ],
-    "descripcion": "EXCAVACION Y LLENOS PAVIMENTOS",
-    "contacto": "ARQ GEOVANY"
+    "descripcion": "Excavación Y Llenos PAVIMENTOS. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima. Estructura de pavimento, perfilado, mejoramiento de subrasante y señalización básica.",
+    "contacto": "GEOVANY — Arq"
   },
   {
     "fecha": "2012-06-30",
-    "cliente": "CONINSA Y RAMON H",
-    "obra": "ALKOSTO CALI",
+    "cliente": "Coninsa Y Ramon H",
+    "obra": "Zona De Parqueo Alkosto Cali",
     "valor_cop": 530000000,
     "tipo": [
       "Excavación",
       "Llenos"
     ],
-    "descripcion": "EXCAVACION Y LLENOS BASE",
+    "descripcion": "Excavación Y Llenos BASE. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
     "contacto": "GRANULARING JOSE LUIS BALDES"
   },
   {
     "fecha": "2012-11-30",
-    "cliente": "CONINSA Y RAMON H",
+    "cliente": "Coninsa Y Ramon H",
     "obra": "ALKOSTO CALI",
     "valor_cop": 380000000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "PERSONAL ADMINISTRACION",
+    "descripcion": "PERSONAL Administración. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
     "contacto": "OFICIALES.ING JOSE LUIS BALDES"
   },
   {
     "fecha": "2012-11-30",
-    "cliente": "CONINSA Y RAMON H",
+    "cliente": "Coninsa Y Ramon H",
     "obra": "ALKOSTO CALI",
     "valor_cop": 480000000,
     "tipo": [
       "Urbanismo"
     ],
-    "descripcion": "URBANISMO",
-    "contacto": "ING JOSE LUIS BALDES"
+    "descripcion": "URBANISMO. Andenes, sardineles, paisajismo y drenajes superficiales integrados al entorno.",
+    "contacto": "JOSE LUIS BALDES — Ing"
   },
   {
     "fecha": "2012-09-01",
-    "cliente": "KIMBERLY CLARK",
-    "obra": "PAPELES DEL CAUCA",
+    "cliente": "Kimberly Clark",
+    "obra": "Jarillones Papeles Del Cauca",
     "valor_cop": 198000000,
     "tipo": [
       "Obras hidráulicas"
     ],
-    "descripcion": "CONSTRUCCION DE JARILLONES ING LUIS URIBE",
-    "contacto": "ING LUIS URIBE"
+    "descripcion": "CONSTRUCCION DE Jarillones. Canales, drenajes y jarillones; manejo de cauces y control de erosión.",
+    "contacto": "LUIS URIBE — Ing"
   },
   {
     "fecha": "2012-10-01",
-    "cliente": "PAPELES DEL CAUCA",
+    "cliente": "Papeles Del Cauca",
     "obra": "EDIFICIO DE LODOS",
     "valor_cop": 230000000,
     "tipo": [
       "Cargue/Transporte/Escombros"
     ],
-    "descripcion": "CARGUE Y TRANSPORTE LODOS",
-    "contacto": " ING EIDR RIAÑO"
+    "descripcion": "CARGUE Y TRANSPORTE LODOS. Cargue, transporte y disposición de escombros en escombrera autorizada; soportes de disposición.",
+    "contacto": "EIDR RIAÑO — Ing"
   },
   {
     "fecha": "2013-01-30",
-    "cliente": "CONSTRUCTORA 180 GRADOS",
+    "cliente": "Constructora 180 Grados",
     "obra": "APARTAMENTOS",
     "valor_cop": 21000000,
     "tipo": [
       "Excavación",
       "Llenos"
     ],
-    "descripcion": "EXCAVACION Y LLENOS",
-    "contacto": " ARQ GEOVANY"
+    "descripcion": "Excavación Y Llenos. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima.",
+    "contacto": "GEOVANY — Arq"
   },
   {
     "fecha": "2013-03-30",
-    "cliente": "ANDRES SAMBRANO",
+    "cliente": "Andres Sambrano",
     "obra": "PLANTA UREA YUMBO",
     "valor_cop": 12000000,
     "tipo": [
       "Urbanismo"
     ],
-    "descripcion": "URBANISMO",
+    "descripcion": "URBANISMO. Andenes, sardineles, paisajismo y drenajes superficiales integrados al entorno.",
     "contacto": "ANDRES SAMBRANO"
   },
   {
     "fecha": "2013-08-28",
-    "cliente": "ARPRO BOGOTA",
+    "cliente": "Arpro Bogota",
     "obra": "CHANEME CALI AMPLIACION",
     "valor_cop": 45800000,
     "tipo": [],
-    "descripcion": "NOVIMIENTOS DE TIERRA",
-    "contacto": "EXCAVACIONES Y LLENOS BASEPEDRO MORA MANRIQUE"
+    "descripcion": "MOVIMIENTOS DE TIERRA",
+    "contacto": "PEDRO MORA MANRIQUE"
   },
   {
     "fecha": "2014-09-10",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOV TIERRA PAISAJISMO FASE 16",
     "valor_cop": 19106000,
     "tipo": [
       "Mantenimiento",
       "Urbanismo"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles. Andenes, sardineles, paisajismo y drenajes superficiales integrados al entorno.",
+    "contacto": ""
   },
   {
     "fecha": "2014-10-06",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 1",
     "valor_cop": 24600000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-07",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANALES EXTERIORES PLAN INUNDAC",
     "valor_cop": 14952415,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-07",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOV TIERRA PAISAJISMO FASE 17",
     "valor_cop": 19106000,
     "tipo": [
       "Mantenimiento",
       "Urbanismo"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles. Andenes, sardineles, paisajismo y drenajes superficiales integrados al entorno.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-07",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS MES NOV 2014",
     "valor_cop": 26300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Suministro e instalación de arboles",
     "valor_cop": 6000000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Comisión de topografía",
     "valor_cop": 12000000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Construcción de canales en concreto",
     "valor_cop": 12000000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Construcción de chimeneas para gases",
     "valor_cop": 21975000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Conformación y nivelación",
     "valor_cop": 24750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Administración",
     "valor_cop": 54681558,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Suministro e instalación de prado",
     "valor_cop": 82500000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Suministro e Instalacion de Geo HDPE20",
     "valor_cop": 102357000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Capa de tierra negra (e=80cm)",
     "valor_cop": 235523077,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-11-18",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOV TIERRA PAISAJISMO FASE 18",
     "valor_cop": 19106000,
     "tipo": [
       "Mantenimiento",
       "Urbanismo"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles. Andenes, sardineles, paisajismo y drenajes superficiales integrados al entorno.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-05",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES DIC 2014",
     "valor_cop": 14250000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-05",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS MES DIC 2014",
     "valor_cop": 26300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-10",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 2",
     "valor_cop": 24600000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Imprevistos",
     "valor_cop": 1859880,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Utilidad",
     "valor_cop": 1859880,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Comision de topografia",
     "valor_cop": 3500000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Administracion",
     "valor_cop": 4959680,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-24",
-    "cliente": "KIMBERLY CLARK",
-    "obra": "Construcción de aletas y compuerta .",
+    "cliente": "Kimberly Clark",
+    "obra": "Construcción de aletas y compuerta",
     "valor_cop": 10296000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "excavacion y retiro de tuberia existente",
     "valor_cop": 10780000,
     "tipo": [
       "Excavación",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Suministro ei nstalaciónde tuberia",
     "valor_cop": 14220000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Capa de tierra negra(e=80cm)",
     "valor_cop": 23200000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES ENE 2014",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2014-12-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS MES ENE 2014",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-01-28",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES FEB 2015",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-01-28",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS MES FEB 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-02-12",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 3",
     "valor_cop": 24600000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-02-12",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 4",
     "valor_cop": 24600000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-02-16",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES MAR 2015",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-02-16",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS MAR 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-03-19",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES ABRIL 2015",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-03-19",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS ABRIL 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-03-19",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 5",
     "valor_cop": 30000000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-03-31",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 5",
     "valor_cop": 28750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-03-31",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 7",
     "valor_cop": 28750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-04-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES ABRIL 2015",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-04-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS ABRIL 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-05-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES MAYO 2015",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-05-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES JUN 2015",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-05-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS MAYO 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-05-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS JUN 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-05-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 8",
     "valor_cop": 28750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-05-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 9",
     "valor_cop": 28750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "PEDRAPLEN",
     "valor_cop": 2500000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "LOCALIZACION Y REPLANTEO",
     "valor_cop": 2918700,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "CERRAMIENTO CON TELA VERDE",
     "valor_cop": 3161550,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "CONFIGURACIÓN Y SEMICOMPACTACION",
     "valor_cop": 4702350,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO DE TALUDES A 45 GRADOS",
     "valor_cop": 5025762,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "IMPREVISTO",
     "valor_cop": 8546297,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA PDCEdith.J.Sanchez@kcc.comFerrE express S.A.S FEBRERO 03 2023 NIT 805,030,111",
-    "contacto": "CERTIFICACIONES DE OBRA RODRIGO MACA Y FERRE EXPRESS ."
+    "descripcion": "MANTENIMIENTO EN LA PLANTA express S.A.S FEBRERO 03 2023 NIT 805,030,111. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": "CERTIFICACIONES DE OBRA RODRIGO MACA Y FERRE EXPRESS"
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "UTILIDAD",
     "valor_cop": 8546297,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES JUL 2015",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "EXCAVACION PROMEDIO 0.70 (COMPACTA)",
     "valor_cop": 20874800,
     "tipo": [
       "Excavación",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION",
     "valor_cop": 21365743,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO DE 10 CM DE ESPESOR",
     "valor_cop": 24817000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS JUL 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 10",
     "valor_cop": 28750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO CON ROCA MUERTA SELECCIONADA",
     "valor_cop": 149657274,
     "tipo": [
       "Llenos",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-04",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES AGO 2015",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-04",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS AGO 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-04",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 10",
     "valor_cop": 28750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-04",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 12",
     "valor_cop": 28750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-14",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "IMPREVISTOS",
     "valor_cop": 6239746,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-14",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "UTILIDAD",
     "valor_cop": 6239746,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-14",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO CON ROCA MUERTA SELECCIONADA",
     "valor_cop": 7969943,
     "tipo": [
       "Llenos",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-14",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "EXCAVACION PROMEDIO 0.70",
     "valor_cop": 15446800,
     "tipo": [
       "Excavación",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-14",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRCION",
     "valor_cop": 15599365,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-14",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO CON ROCA MUERTA SELECCIONADA",
     "valor_cop": 132038759,
     "tipo": [
       "Llenos",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-26",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES SEPT 2015",
     "valor_cop": 15000000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-26",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS SEPT 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-26",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 13",
     "valor_cop": 28750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-08-26",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL LLUVIAS FASE 14",
     "valor_cop": 29750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "IMPREVISTOS 4%",
     "valor_cop": 1357102,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "UTILIDAD 4%",
     "valor_cop": 1357102,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "DEMOLICION",
     "valor_cop": 1548000,
     "tipo": [
       "Demolición",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Demolición controlada, segregación de residuos y gestión RCD conforme a normativa local. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO CON MATERIAL DE SITIO",
     "valor_cop": 2708842,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION 10%",
     "valor_cop": 3392756,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "EXCAVACION PDC (DELTAS)",
     "valor_cop": 4342400,
     "tipo": [
       "Excavación",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "VIBRO COMPACTADORA",
     "valor_cop": 6804000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "LIMPIEZA MOTONIVELADORA",
     "valor_cop": 7350000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "DENSIDADES",
     "valor_cop": 8000000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-08",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO DE 5CM SUBBASE",
     "valor_cop": 12408500,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES OCTUBRE 2015",
     "valor_cop": 15200000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-11",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS OCTUBRE 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "IMPREVISTOS 4% CONSTRUCCIÓN VIA",
     "valor_cop": 3396969,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "UTILIDAD 4% CONSTRUCCIÓN VIA",
     "valor_cop": 3396969,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "EXCAVACION PROMEDIO 0.70 (COMPACTA) CON",
     "valor_cop": 3809904,
     "tipo": [
       "Excavación",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION 10% CONSTRUCCIÓN VIA",
     "valor_cop": 8492424,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SARDINEL DE CONFINAMIENTO DE SECCIÓN",
     "valor_cop": 9513000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO DE 20 CM CON BASE GRANULAR",
     "valor_cop": 10062920,
     "tipo": [
       "Base granular",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro, extendido y compactación de base granular (B-200) con control de espesores y densidades. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO DE 40 CM DE ESPESOR",
     "valor_cop": 20125840,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "CARPETA ASFALTICA TIPO MDC-2 DE ESPESOR",
     "valor_cop": 39403000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Sev tratamiento de juntas pisos c1 Sep",
     "valor_cop": 12614000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Sev tratamiento de juntas pisos c1 Oct",
     "valor_cop": 12614000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Sev tratamiento de juntas pisos c1 Nov",
     "valor_cop": 12614000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Sev tratamiento de juntas pisos c1 Dic",
     "valor_cop": 12614000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-09-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Sev tratamiento de juntas pisos c1 Ene",
     "valor_cop": 12614000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-10-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "LIMPIEZA CON MOTONIVELADORA",
     "valor_cop": 2400000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-10-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADECUACION DE VIA INTERNA",
     "valor_cop": 2500000,
     "tipo": [
@@ -1411,947 +1411,947 @@
       "Mantenimiento",
       "Vías"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Adecuaciones de áreas, losas y muelles; correcciones de nivelación y confinamientos. Mantenimiento programado y correctivo de áreas industriales y obras civiles. Estructura de pavimento, perfilado, mejoramiento de subrasante y señalización básica.",
+    "contacto": ""
   },
   {
     "fecha": "2015-11-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "IMPREVISTOS MOV. TIERRAS",
     "valor_cop": 2570151,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-11-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "UTILIDAD MOV. TIERRAS",
     "valor_cop": 2570151,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-11-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "EXCAVACION PROMEDIO 0.70 MOV. TIERRAS",
     "valor_cop": 3668224,
     "tipo": [
       "Excavación",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-11-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO 10 CM DE ESPESOR MOV. TIERRAS",
     "valor_cop": 4727680,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-11-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION MOV. TIERRAS",
     "valor_cop": 5140302,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-11-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RELLENO ROCA MUERTA SEL. MOV. TIERRAS",
     "valor_cop": 41668557,
     "tipo": [
       "Llenos",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-12-04",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "REPARCHEO MANTO ASFALTICO",
     "valor_cop": 2100000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-12-04",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "CERRAMIENTO CON TELA VERDE, Y TACOS DE",
     "valor_cop": 2125441,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-12-04",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BULLDOZER MES DICIEMBRE 2015",
     "valor_cop": 15200000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-12-04",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MOVIMIENTO LODOS DICIEMBRE 2015",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2015-12-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV MTO CANAL DE INUNDACION POR LLUVIAS",
     "valor_cop": 29750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-01-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "IMPREVISTOS",
     "valor_cop": 1343583,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-01-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "UTILIDAD",
     "valor_cop": 1343583,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-01-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "CONSTRUCCION DESAGUE VIA",
     "valor_cop": 3036168,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-01-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION",
     "valor_cop": 3358958,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-01-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "PLATAFORMA AIRE ACONDICIONADO",
     "valor_cop": 9252749,
     "tipo": [
       "Mantenimiento",
       "Plataforma/Terrazas"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles. Conformación de plataformas y terrazas, nivelación y compactación para equipos o edificaciones.",
+    "contacto": ""
   },
   {
     "fecha": "2016-01-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "VIA ADICIONAL",
     "valor_cop": 9731561,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-01-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "LIMPIEZA",
     "valor_cop": 11569100,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-01-31",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV APOYO MOVIMIENTO LODOS ENERO 2016",
     "valor_cop": 27300000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-02-02",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION",
     "valor_cop": 2549234,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-02-02",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "LIMPIEZA MOVIMIENTO DE TIERRAS",
     "valor_cop": 25492339,
     "tipo": [
       "Mantenimiento",
-      "Movimiento de tierra"
+      "Movimiento de tierras"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-02-12",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION",
     "valor_cop": 1625820,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-02-12",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "REPARACION PLATAFORMA",
     "valor_cop": 23226000,
     "tipo": [
       "Mantenimiento",
       "Plataforma/Terrazas"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles. Conformación de plataformas y terrazas, nivelación y compactación para equipos o edificaciones.",
+    "contacto": ""
   },
   {
     "fecha": "2016-04-29",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADECUACION DE TERRENOS EXTERIORES",
     "valor_cop": 25560000,
     "tipo": [
       "Adecuaciones/Obra civil",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Adecuaciones de áreas, losas y muelles; correcciones de nivelación y confinamientos. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-05-03",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "servicio revision podada torres 115kv",
     "valor_cop": 1860000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-05-20",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADECUACION YCOMPAC. MUELLE DE CARGA",
     "valor_cop": 7038847,
     "tipo": [
       "Adecuaciones/Obra civil",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Adecuaciones de áreas, losas y muelles; correcciones de nivelación y confinamientos. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-05-20",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RECOLECCION DE ESCOMBROS",
     "valor_cop": 7149000,
     "tipo": [
       "Cargue/Transporte/Escombros",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Cargue, transporte y disposición de escombros en escombrera autorizada; soportes de disposición. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-05-20",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADECUACION DE VIA Y AREA AIRE ACONDCION",
     "valor_cop": 8486400,
     "tipo": [
       "Adecuaciones/Obra civil",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Adecuaciones de áreas, losas y muelles; correcciones de nivelación y confinamientos. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-05-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION",
     "valor_cop": 1655000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-05-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "LIMPIEZA AREA WIPES EXPANSION",
     "valor_cop": 16650000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-05-25",
-    "cliente": "KIMBERLY CLARK",
-    "obra": "ADECUACION DE INGRESOS PEATONALES",
+    "cliente": "Kimberly Clark",
+    "obra": "ADECUACION DE RESOS PEATONALES",
     "valor_cop": 7980000,
     "tipo": [
       "Adecuaciones/Obra civil",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Adecuaciones de áreas, losas y muelles; correcciones de nivelación y confinamientos. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-06-16",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "LIMPIEZA EXTERIORES EDIFICIO WIPES",
     "valor_cop": 11920000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-06-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Servicio poda y desbarre canal nichollls",
     "valor_cop": 13000000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-06-23",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BARRIDO LMOV PATIO 2 ALMACEN",
     "valor_cop": 5750000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-06-29",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION",
     "valor_cop": 1429800,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-06-29",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RECOLECCION DE ESCOMBROS",
     "valor_cop": 13498000,
     "tipo": [
       "Cargue/Transporte/Escombros",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Cargue, transporte y disposición de escombros en escombrera autorizada; soportes de disposición. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-07-06",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Mantenimiento canales hacia el relleno",
     "valor_cop": 5499715,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-07-18",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RETROESCABADORA 3 DIAS",
     "valor_cop": 1680000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-07-18",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "TRANSPORTE EN VOLQUETA ESCOMBROS",
     "valor_cop": 1700000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-08-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV SUMINISTR ALQUILER VIBROCOMPACTADOR",
     "valor_cop": 1680000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-08-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV SUMINISTRO ALQUILER RETRO LLANTAS",
     "valor_cop": 2400000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-08-21",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ROCA MUERTA",
     "valor_cop": 5400000,
     "tipo": [
       "Llenos",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-10-25",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "RECOSTRUCCION BARRERA PERIMETRAL WIPES",
     "valor_cop": 29480000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-11-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV. EVACUACION LODO PAPELERO",
     "valor_cop": 2500000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-12-13",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Imprevistos",
     "valor_cop": 7046954,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-12-13",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "utilidad",
     "valor_cop": 7046954,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-12-13",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO LIMPIEZA TALUD JARILLON NICOLS",
     "valor_cop": 8125000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-12-13",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Administracion",
     "valor_cop": 11275126,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-12-13",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICI ADECUACION TERRENO CENTRO ACOPIO",
     "valor_cop": 13474000,
     "tipo": [
       "Adecuaciones/Obra civil",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Adecuaciones de áreas, losas y muelles; correcciones de nivelación y confinamientos. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-12-13",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Adecuacion terreno grua 750T",
     "valor_cop": 140939073,
     "tipo": [
       "Adecuaciones/Obra civil",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Adecuaciones de áreas, losas y muelles; correcciones de nivelación y confinamientos. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-12-29",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO UTILIDAD REPARACION VIA COFORM",
     "valor_cop": 1654850,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-12-29",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO AI REPARACION VIA COFORM",
     "valor_cop": 5791976,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2016-12-29",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO REPARACION VIA COFORM",
     "valor_cop": 41371257,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-01-12",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Control de trafico Movimiento tierra",
     "valor_cop": 2670000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-01-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO AI ADICIO REPARACION VIA COFORM",
     "valor_cop": 1808030,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-01-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO ADICIONAL REPARACION VIA COFORM",
     "valor_cop": 12914500,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-01-26",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "Construccion de carcamo para tuberia",
     "valor_cop": 4198539,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-02-20",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV SUMINISTRO ALQUILER BULL DOZER",
     "valor_cop": 16800000,
     "tipo": [
       "Alquiler de maquinaria",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Suministro de maquinaria pesada con operador, combustible y seguros. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-03-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "IMPREVISTOS",
     "valor_cop": 1594599,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-03-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "UTILIDAD",
     "valor_cop": 1594599,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-03-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION",
     "valor_cop": 2551359,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-03-22",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "AJUSTE COMPACTACION BASE YANKEE",
     "valor_cop": 31891986,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-03-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV UTILIDAD MODIF CANAL AGUAS LLUVIAS",
     "valor_cop": 4136067,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-03-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO AI MODIFI CANAL AGUAS LLUVIAS",
     "valor_cop": 12408201,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-03-30",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO MODIFICACI CANAL AGUAS LLUVIAS",
     "valor_cop": 68934447,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-04-12",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO BAÑO MOVIL FLUSHING",
     "valor_cop": 6065920,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-04-19",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV RETIRO GRAMA E INSTA GRAVA WIPES",
     "valor_cop": 10232000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-04-24",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "desmalezar llimpieza y fumigar",
     "valor_cop": 2778240,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-05-09",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV. EVACUACION CON VOLQUETA",
     "valor_cop": 2000000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-05-09",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERV. EVACUACION CON RETROESCAVADORA",
     "valor_cop": 2000000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-05-19",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "SERVICIO LIMPIEZA LODO LAGO CHIGUIROS",
     "valor_cop": 15600000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-05-31",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "UTILIDAD",
     "valor_cop": 2160000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-05-31",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "IMPREVISTO",
     "valor_cop": 2592000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-05-31",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ADMINISTRACION",
     "valor_cop": 3456000,
     "tipo": [
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA",
-    "contacto": "PDCEdith.J.Sanchez@kcc.com"
+    "descripcion": "MANTENIMIENTO EN LA PLANTA. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
+    "contacto": ""
   },
   {
     "fecha": "2017-05-31",
-    "cliente": "KIMBERLY CLARK",
+    "cliente": "Kimberly Clark",
     "obra": "ACONDICIONAMIENTO TERRENO BASE YANKEE",
     "valor_cop": 43200000,
     "tipo": [
       "Excavación",
       "Mantenimiento"
     ],
-    "descripcion": "MANTENIMIENTO EN LA PLANTA PDCEdith.J.Sanchez@kcc.com ENERO DEL 2019KIMBERLY CLARK NIKOLA $ 144.735.387 EXCAVACION YLLANOS PLANTA",
+    "descripcion": "MANTENIMIENTO EN LA PLANTA ENERO DEL 2019KIMBERLY CLARK NIKOLA $ 144.735.387 Excavación YLLANOS PLANTA. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Mantenimiento programado y correctivo de áreas industriales y obras civiles.",
     "contacto": "NIKOLA PDCING.LUIS F. CARDONA 3185744528"
   },
   {
     "fecha": "2019-08-30",
-    "cliente": "CONSTRUCTORA MELENDEZ",
+    "cliente": "Constructora Melendez",
     "obra": "DEMOLICION CLUB PUENTE PALMA",
     "valor_cop": 75305608,
     "tipo": [
       "Demolición",
-      "Movimiento de tierra"
+      "Movimiento de tierras"
     ],
-    "descripcion": "DEMOLER EDIFICIOS Y PISCINAS RETRO Y CERTIFICACIONNicolás Cantor Acosta 3123050863 SEPTIEMBRE DEL 2019CONSTRUCTORA BOLIVAR ATARDECERES CIUDAD DEL VALLE $ 401.670.453 MOVIMIENTOS DE TIERRA PARA",
+    "descripcion": "DEMOLER EDIFICIOS Y PISCINAS RETRO Y CERTIFICACIONNicolás Cantor Acosta SEPTIEMBRE DEL 2019CONSTRUCTORA BOLIVAR ATARDECERES CIUDAD DEL VALLE $ 401.670.453 MOVIMIENTOS DE TIERRA PARA. Demolición controlada, segregación de residuos y gestión RCD conforme a normativa local.",
     "contacto": "CONFORMACION DE TERRAZASErika Johana Matiz Bohorquez"
   },
   {
     "fecha": "2020-01-16",
-    "cliente": "CONSTRUCTORA BOLIVAR",
+    "cliente": "Constructora Bolivar",
     "obra": "OBRA CRA 99 VALLE DEL LILI Y BOCHALEMA. CIUDAD VIVERO",
     "valor_cop": 77000000,
     "tipo": [
       "Urbanismo"
     ],
-    "descripcion": "SALA DE VENTAS, PARQUEADEROS",
+    "descripcion": "SALA DE VENTAS, PARQUEADEROS. Andenes, sardineles, paisajismo y drenajes superficiales integrados al entorno.",
     "contacto": "VIA DE INGRESO AL PROYECTOJUAN FERNANDO ESCOBAR M"
   },
   {
     "fecha": "2020-02-03",
-    "cliente": "CONSTRUCTORA BOLIVAR",
+    "cliente": "Constructora Bolivar",
     "obra": "OBRA YUMBO VIA PANAMERICAN",
     "valor_cop": 25000000,
     "tipo": [
       "Urbanismo"
     ],
-    "descripcion": "SALA DE VENTAS, PARQUEADEROS",
+    "descripcion": "SALA DE VENTAS, PARQUEADEROS. Andenes, sardineles, paisajismo y drenajes superficiales integrados al entorno.",
     "contacto": "VIA DE INGRESO AL PROYECTOJUAN FERNANDO ESCOBAR M"
   },
   {
     "fecha": "2020-09-22",
-    "cliente": "CONDOMINIO CAMPESTRE PRIVILEGIO",
+    "cliente": "Condominio Campestre Privilegio",
     "obra": "JAMUNDI 200MTS DE VIA INTERNA",
     "valor_cop": 38520002,
     "tipo": [
       "Vías"
     ],
-    "descripcion": "RECUPERACION DE VIA EXISTENTE EN",
+    "descripcion": "RECUPERACION DE VIA EXISTENTE EN. Estructura de pavimento, perfilado, mejoramiento de subrasante y señalización básica.",
     "contacto": "ASFALTOADMINISTRACION CONDOMINIO"
   },
   {
     "fecha": "2020-09-16",
-    "cliente": "MADECENTRO PALMIRA",
-    "obra": "500MTS DE VIA O CARRIL INVIAS",
+    "cliente": "Madecentro Palmira",
+    "obra": "Construccion Via / Carril Invias",
     "valor_cop": 395662149,
     "tipo": [
       "Vías"
     ],
-    "descripcion": "CONSTRUCCION VIA DE ACELERACION Y DESACELERACIONLORETO CONSTRUCCIONES MEDELLIN",
+    "descripcion": "CONSTRUCCION VIA ACELERACION Y DESACELERACION (500MTS). Estructura de pavimento, perfilado, mejoramiento de subrasante y señalización básica.",
     "contacto": "3218126804 ING ALVARO VELEZ"
   },
   {
     "fecha": "2020-02-03",
-    "cliente": "INVERSIONES ORDOÑEZ BURITICAY CIA",
+    "cliente": "Inversiones Ordoñez Buriticay Cia",
     "obra": "S EN CS CENTRO COMERCIAL COMPEX 122",
     "valor_cop": 239305600,
     "tipo": [
       "Demolición",
       "Excavación"
     ],
-    "descripcion": "EXCAVACION 9800M3 Y DEMOLICION",
+    "descripcion": "Excavación 9800M3 Y Demolición. Demolición controlada, segregación de residuos y gestión RCD conforme a normativa local. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado.",
     "contacto": "DE MURO DE 60 ML X 40X5 MTSRODRIGO GIRALDO 3167436708"
   },
   {
     "fecha": "2021-08-30",
-    "cliente": "MADECENTRO PALMIRA",
+    "cliente": "Madecentro Palmira",
     "obra": "1520M2 PARQUEADEROS MOTOS Y CARROS",
     "valor_cop": 115000000,
     "tipo": [
       "Urbanismo"
     ],
-    "descripcion": "CONSTRUCCION DE AREA INTERNA DE PARQUEADEROSLORETO CONSTRUCCIONES MEDELLIN",
+    "descripcion": "CONSTRUCCION DE AREA INTERNA DE PARQUEADEROSLORETO CONSTRUCCIONES MEDELLIN. Andenes, sardineles, paisajismo y drenajes superficiales integrados al entorno.",
     "contacto": "3218126804 ING ALVARO VELEZ"
   },
   {
     "fecha": "2021-09-15",
-    "cliente": "MADECENTRO PALMIRA",
+    "cliente": "Madecentro Palmira",
     "obra": "200 M2 PARQUEADERO EXTERNO VISITANTES RED ALCANTARILLADO",
     "valor_cop": 45000000,
     "tipo": [
       "Urbanismo"
     ],
-    "descripcion": "CONSTRUCCION PARQUEADEROS VISITANTESLORETO CONSTRUCCIONES MEDELLIN",
+    "descripcion": "CONSTRUCCION PARQUEADEROS VISITANTESLORETO CONSTRUCCIONES MEDELLIN. Andenes, sardineles, paisajismo y drenajes superficiales integrados al entorno.",
     "contacto": "3218126804 ING ALVARO VELEZ"
   },
   {
     "fecha": "2021-09-16",
-    "cliente": "HERRERIA 5 EL CASTILLO EN JAMUNDI",
+    "cliente": "Herreria 5 El Castillo En Jamundi",
     "obra": "ESTABILIZAR VIA INTERNA",
     "valor_cop": 17500000,
     "tipo": [
@@ -2362,13 +2362,13 @@
       "Plataforma/Terrazas",
       "Vías"
     ],
-    "descripcion": "RECUPERAR Y REPAVIMENTAR VIA INTERNA ADMINISTRACION DEL CONDOMINIO 3506622198 OCTUBRE DEL 2021MASTERPLACEXCAVACION Y LLENOS PLATAFORMA PARA NUEVA PLANTA $ 577.478.351 EXCAVACION Y LLENOS PAPELES DEL CAUCA SA ING SUSANA BIAVA 3113909127 MARZO DEL 2022 A DIC 2022COLOMBIANA KIMBERLY COLPAPEL PAVIMENTOS EN VIAS INTERNAS $ 245.000.000 PAVIMENTOS NUEVOS FELIPE AGUDELO 3135285596 NOVIEMBRE DEL 2022JARAMILLO MORA DEMOLICION CLUB CAÑAS GORDAS $ 49.596.111 DEMOLICION Y DISPOCISION FINAL DE ESCOMBROSING MARIA RENGIFO 3164050257 DICIEMBRE DEL 2022HITOS URBANOS CERRO ALTO $ 102.657.568 CONSTRUCCION CARRETEABLE Y RETIRO ESCOMBROSING PILAR ALVAREZ 3002849463 TOTAL APROXIMADO $ 11.684.434.074",
+    "descripcion": "RECUPERAR Y REPAVIMENTAR VIA INTERNA OCTUBRE DEL 2021MASTERPLACEXCAVACION Y Llenos Plataforma PARA NUEVA PLANTA $ 577.478.351 Excavación Y Llenos PAPELES DEL CAUCA SA SUSANA BIAVA MARZO DEL 2022 A DIC 2022COLOMBIANA KIMBERLY COLPAPEL PAVIMENTOS EN VIAS INTERNAS $ 245.000.000 PAVIMENTOS NUEVOS FELIPE AGUDELO NOVIEMBRE DEL 2022JARAMILLO MORA Demolición CLUB CAÑAS GORDAS $ 49.596.111 Demolición Y DISPOCISION FINAL DE ESCOMBROSING MARIA RENGIFO DICIEMBRE DEL 2022HITOS URBANOS CERRO ALTO $ 102.657.568 CONSTRUCCION CARRETEABLE Y RETIRO ESCOMBROSING PILAR ALVAREZ TOTAL APROXIMADO $ 11.684.434.074. Demolición controlada, segregación de residuos y gestión RCD conforme a normativa local. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima. Mantenimiento programado y correctivo de áreas industriales y obras civiles. Conformación de plataformas y terrazas, nivelación y compactación para equipos o edificaciones. Estructura de pavimento, perfilado, mejoramiento de subrasante y señalización básica.",
     "contacto": "ADMINISTRACION DEL CONDOMINIO"
   },
-    {
+  {
     "fecha": "2025-04-20",
-    "cliente": "COLEGIO BOLIVAR",
-    "obra": "DEMOLISION COLISEO ANTIGUI COLEGIO BOLIVAR",
+    "cliente": "Colegio Bolivar",
+    "obra": "Demolicion antiguo Coliseo Colegio Bolivar",
     "valor_cop": 270000000,
     "tipo": [
       "Demolición",
@@ -2376,7 +2376,7 @@
       "Llenos",
       "Base granular"
     ],
-    "descripcion": "DEMOLISION DEL ANTIGUO COLISEO DEL COLEGIO BOLIVAR (CALI), CARGUE, RETIRO Y DISPOSICION FINAL CERTIFICADA",
-    "contacto": "ARQ RODRIGO RUIZ ALBAN"
+    "descripcion": "DEMOLISION DEL ANTIGUO COLISEO DEL COLEGIO BOLIVAR (CALI), CARGUE, RETIRO Y DISPOSICION FINAL CERTIFICADA. Demolición controlada, segregación de residuos y gestión RCD conforme a normativa local. Excavación a cielo abierto, conformación de taludes y manejo de aguas; disposición de material en botadero autorizado. Rellenos compactados por capas con material seleccionado; control de densidad (Proctor mod. ≥ 95%) y humedad óptima. Suministro, extendido y compactación de base granular (B-200) con control de espesores y densidades.",
+    "contacto": "RODRIGO RUIZ ALBAN — Arq"
   }
 ]

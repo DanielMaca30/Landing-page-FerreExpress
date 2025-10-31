@@ -1,3 +1,10 @@
+import imgPostobon from "./assets/destacados/postobon.jpg";
+import imgMadecentro from "./assets/destacados/madecentro.png";
+import imgAlkosto from "./assets/destacados/alkosto.jpg";
+import imgPapeles from "./assets/destacados/papeles-del-cauca.jpeg";
+import imgMonticello from "./assets/destacados/monticello.png";
+import imgBolivar from "./assets/destacados/colegio-bolivar.jpg";
+import heroBg from "./assets/logos/banner.png";
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -274,7 +281,9 @@ function KPIs({ data }) {
           <div className="text-3xl font-semibold">{clientes}</div>
         </div>
         <div className="rounded-2xl border border-gray-200 p-5 bg-white">
-          <div className="text-sm text-gray-500">Total histórico</div>
+          <div className="text-sm text-gray-500">
+            Total histórico aproximado
+          </div>
           <div className="text-2xl font-semibold">{toCOP(total)}</div>
         </div>
       </div>
@@ -507,7 +516,7 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
 }
 
 /* =========================
-   PROYECTOS DESTACADOS
+   PROYECTOS DESTACADOS (con fotos locales)
 ========================= */
 function FeaturedProjects({ data }) {
   const FEATURED = [
@@ -515,28 +524,60 @@ function FeaturedProjects({ data }) {
     "madecentro",
     "alkosto",
     "papeles del cauca",
-    "pijao",
+    "monticello",
     "colegio bolivar",
   ];
 
-  const featured = FEATURED.map((name) => {
-    const match = data.find(
-      (d) =>
-        (d.cliente || "").toLowerCase().includes(name) ||
-        (d.obra || "").toLowerCase().includes(name)
-    );
-    return { name, item: match || null };
-  });
+  const FOTOS = [
+    imgPostobon,
+    imgMadecentro,
+    imgAlkosto,
+    imgPapeles,
+    imgMonticello,
+    imgBolivar,
+  ];
 
-  const Card = ({ name, item }) => (
+  // Busca el proyecto que mejor coincida por cliente u obra (minúsculas)
+  const findProject = (needle) => {
+    const n = needle.toLowerCase();
+    return (
+      data.find(
+        (d) =>
+          (d.cliente || "").toLowerCase().includes(n) ||
+          (d.obra || "").toLowerCase().includes(n)
+      ) || null
+    );
+  };
+
+  const featured = FEATURED.map((name, i) => ({
+    name,
+    item: findProject(name),
+    foto: FOTOS[i],
+  }));
+
+  const Card = ({ name, item, foto }) => (
     <HoverCard>
-      <div
-        className="aspect-[4/3] bg-cover bg-center rounded-xl border border-gray-100"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop)",
-        }}
-      />
+      <div className="aspect-[4/3] rounded-xl border border-gray-100 overflow-hidden bg-gray-100">
+        {foto ? (
+          <img
+            src={foto}
+            alt={`Proyecto destacado - ${item?.obra || name}`}
+            className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        ) : (
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop)",
+            }}
+            aria-label="Imagen de obra (placeholder)"
+          />
+        )}
+      </div>
+
       <div className="pt-4">
         <div className="text-xs uppercase tracking-wide text-gray-500">
           Proyecto destacado
@@ -565,8 +606,8 @@ function FeaturedProjects({ data }) {
         </h3>
       </FadeIn>
       <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featured.map(({ name, item }) => (
-          <Card key={name} name={name} item={item} />
+        {featured.map(({ name, item, foto }) => (
+          <Card key={name} name={name} item={item} foto={foto} />
         ))}
       </div>
     </div>
@@ -781,15 +822,14 @@ function Header() {
     >
       <div className="max-w-6xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
         {/* Logos más grandes */}
-        <a href="#inicio" className="flex items-center gap-3" aria-label="Ir al inicio">
+        <a
+          href="#inicio"
+          className="flex items-center gap-3"
+          aria-label="Ir al inicio"
+        >
           <img
             src={logo1}
             alt="FerreExpress - Logo principal"
-            className="h-12 md:h-14 w-auto drop-shadow-sm"
-          />
-          <img
-            src={logo2}
-            alt="Marca asociada"
             className="h-12 md:h-14 w-auto drop-shadow-sm"
           />
         </a>
@@ -841,7 +881,10 @@ function Header() {
         <a
           href="#contacto"
           className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white shadow-md hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2"
-          style={{ background: "#111827", boxShadow: "0 8px 24px -12px rgba(17,24,39,.45)" }}
+          style={{
+            background: "#111827",
+            boxShadow: "0 8px 24px -12px rgba(17,24,39,.45)",
+          }}
         >
           Cotiza ahora <ArrowRight size={18} />
         </a>
@@ -950,7 +993,8 @@ export default function App() {
 
   return (
     <>
-      <Header />{/* fijo y fuera del flujo del contenido scrollable */}
+      <Header />
+      {/* fijo y fuera del flujo del contenido scrollable */}
       <main
         className="min-h-screen bg-white text-gray-800 pt-16 md:pt-20"
         style={{ scrollBehavior: "smooth" }}
@@ -1019,9 +1063,14 @@ export default function App() {
 
             <FadeIn delay={0.1}>
               <div className="relative">
-                <div className="aspect-video w-full rounded-2xl border border-gray-200 overflow-hidden shadow-sm bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center" />
+                <div
+                  className="aspect-video w-full rounded-2xl border border-gray-200 overflow-hidden shadow-sm bg-cover bg-center"
+                  style={{ backgroundImage: `url(${heroBg})` }}
+                />
                 <div className="absolute -bottom-4 -right-4 bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-                  <div className="text-xs text-gray-500">Total histórico</div>
+                  <div className="text-xs text-gray-500">
+                    Total histórico aproximado
+                  </div>
                   <div className="text-2xl font-semibold">
                     {toCOP(totalHistorico) || "—"}
                   </div>
@@ -1032,23 +1081,26 @@ export default function App() {
         </section>
 
         {/* ===== QUIÉNES SOMOS / MISIÓN / VISIÓN / VALORES ===== */}
-        <section id="quienes" className="scroll-mt-24 py-16 md:py-24 bg-gray-50">
+        <section
+          id="quienes"
+          className="scroll-mt-24 py-16 md:py-24 bg-gray-50"
+        >
           <div className="max-w-6xl mx-auto px-4">
             <FadeIn>
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
                 Quiénes somos
               </h2>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                FerreExpress S.A.S. es una empresa de obras civiles especializada
-                en movimiento de tierras, construcción y mantenimiento de
-                infraestructura. Contamos con equipo y operación propia
-                (maquinaria amarilla y transporte) y abastecemos materiales
-                provenientes de canteras certificadas, garantizando trazabilidad,
-                calidad de suministro y cumplimiento normativo en cada proyecto.
-                Operamos en Cali y ciudades aledañas, atendiendo clientes del
-                sector público y privado con un enfoque en seguridad,
-                productividad y sostenibilidad (gestión responsable de RCD y
-                disposición en sitios autorizados).
+                FerreExpress S.A.S. es una empresa de obras civiles
+                especializada en movimiento de tierras, construcción y
+                mantenimiento de infraestructura. Contamos con equipo y
+                operación propia (maquinaria amarilla y transporte) y
+                abastecemos materiales provenientes de canteras certificadas,
+                garantizando trazabilidad, calidad de suministro y cumplimiento
+                normativo en cada proyecto. Operamos en Cali y ciudades
+                aledañas, atendiendo clientes del sector público y privado con
+                un enfoque en seguridad, productividad y sostenibilidad (gestión
+                responsable de RCD y disposición en sitios autorizados).
               </p>
             </FadeIn>
 
@@ -1071,8 +1123,8 @@ export default function App() {
                     Seguridad y salud en el trabajo como prioridad operativa.
                   </li>
                   <li>
-                    Gestión ambiental responsable, con trazabilidad de materiales
-                    y disposición certificada de escombros.
+                    Gestión ambiental responsable, con trazabilidad de
+                    materiales y disposición certificada de escombros.
                   </li>
                 </ul>
               </HoverCard>
@@ -1088,13 +1140,14 @@ export default function App() {
                     estándares de habitabilidad.
                   </li>
                   <li>
-                    La participación competitiva en licitaciones gubernamentales,
-                    cumpliendo requisitos técnicos, legales y de experiencia.
+                    La participación competitiva en licitaciones
+                    gubernamentales, cumpliendo requisitos técnicos, legales y
+                    de experiencia.
                   </li>
                   <li>
                     El fortalecimiento de proyectos viales urbanos y rurales,
-                    ampliando capacidad operativa, flota y convenios con canteras
-                    certificadas.
+                    ampliando capacidad operativa, flota y convenios con
+                    canteras certificadas.
                   </li>
                 </ul>
               </HoverCard>
@@ -1110,13 +1163,18 @@ export default function App() {
                     Integridad y transparencia: trazabilidad de origen y
                     disposición.
                   </li>
-                  <li>Seguridad ante todo: HSE como cultura, no como trámite.</li>
-                  <li>Excelencia operativa: productividad y mejora continua.</li>
+                  <li>
+                    Seguridad ante todo: HSE como cultura, no como trámite.
+                  </li>
+                  <li>
+                    Excelencia operativa: productividad y mejora continua.
+                  </li>
                   <li>
                     Cumplimiento: planificación realista y reportes al cliente.
                   </li>
                   <li>
-                    Sostenibilidad: manejo responsable de RCD y respeto normativo.
+                    Sostenibilidad: manejo responsable de RCD y respeto
+                    normativo.
                   </li>
                 </ul>
               </HoverCard>
@@ -1127,7 +1185,8 @@ export default function App() {
                 </h3>
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
                   <li>
-                    Equipo propio y disponibilidad: mayor control del cronograma.
+                    Equipo propio y disponibilidad: mayor control del
+                    cronograma.
                   </li>
                   <li>
                     Calidad verificada: materiales con certificados y ensayos.
@@ -1136,7 +1195,8 @@ export default function App() {
                     Documentación al día: pólizas, hojas de vida y permisos.
                   </li>
                   <li>
-                    Manifiestos de disposición final y manejo responsable de RCD.
+                    Manifiestos de disposición final y manejo responsable de
+                    RCD.
                   </li>
                   <li>Atención local y tiempos de respuesta ágiles.</li>
                 </ul>
@@ -1146,15 +1206,18 @@ export default function App() {
         </section>
 
         {/* ===== CAPACIDADES ===== */}
-        <section id="capacidades" className="scroll-mt-24 py-16 md:py-24 bg-white">
+        <section
+          id="capacidades"
+          className="scroll-mt-24 py-16 md:py-24 bg-white"
+        >
           <div className="max-w-6xl mx-auto px-4">
             <FadeIn>
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
                 Capacidades principales
               </h2>
               <p className="mt-3 text-gray-600">
-                Soluciones integrales de obra y suministro para acompañar todo el
-                ciclo del proyecto.
+                Soluciones integrales de obra y suministro para acompañar todo
+                el ciclo del proyecto.
               </p>
             </FadeIn>
 
@@ -1167,8 +1230,8 @@ export default function App() {
                   </h3>
                 </div>
                 <p className="mt-2 text-sm text-gray-700">
-                  Excavación, corte, relleno, conformación de taludes, transporte
-                  y disposición.
+                  Excavación, corte, relleno, conformación de taludes,
+                  transporte y disposición.
                 </p>
               </HoverCard>
 
@@ -1180,7 +1243,8 @@ export default function App() {
                   </h3>
                 </div>
                 <p className="mt-2 text-sm text-gray-700">
-                  Estructuras menores, drenajes, muros, andenes y espacio público.
+                  Estructuras menores, drenajes, muros, andenes y espacio
+                  público.
                 </p>
               </HoverCard>
 
@@ -1203,7 +1267,8 @@ export default function App() {
                   </h3>
                 </div>
                 <p className="mt-2 text-sm text-gray-700">
-                  Retroexcavadoras, compactadores, bulldozers y más, con operador.
+                  Retroexcavadoras, compactadores, bulldozers y más, con
+                  operador.
                 </p>
               </HoverCard>
 
@@ -1238,7 +1303,10 @@ export default function App() {
         <ActivitiesSection />
 
         {/* ===== SERVICIOS ===== */}
-        <section id="servicios" className="scroll-mt-24 py-16 md:py-24 bg-gray-50">
+        <section
+          id="servicios"
+          className="scroll-mt-24 py-16 md:py-24 bg-gray-50"
+        >
           <div className="max-w-6xl mx-auto px-4">
             <FadeIn>
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
@@ -1381,17 +1449,6 @@ export default function App() {
             <div className="text-gray-500">
               © {new Date().getFullYear()} {CONFIG.nombre} Todos los derechos
               reservados.
-            </div>
-            <div className="flex items-center gap-4 text-gray-500">
-              <a href={CONFIG.redes.instagram} className="hover:text-gray-900">
-                Instagram
-              </a>
-              <a href={CONFIG.redes.linkedin} className="hover:text-gray-900">
-                LinkedIn
-              </a>
-              <a href={CONFIG.redes.web} className="hover:text-gray-900">
-                Sitio web
-              </a>
             </div>
           </div>
         </footer>
