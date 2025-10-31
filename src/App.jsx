@@ -8,6 +8,7 @@ import heroBg from "./assets/logos/banner.png";
 
 import { useEffect, useMemo, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   ArrowRight,
   Check,
@@ -196,7 +197,11 @@ function Header() {
         role="banner"
         className={`fixed top-0 left-0 right-0 z-[100] border-b border-[#e0a90d]
           transition-all duration-300
-          ${scrolled ? "shadow-[0_10px_30px_-18px_rgba(17,24,39,.45)]" : "shadow-none"}`}
+          ${
+            scrolled
+              ? "shadow-[0_10px_30px_-18px_rgba(17,24,39,.45)]"
+              : "shadow-none"
+          }`}
         style={{ background: CONFIG.brand.primary }}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 h-16 md:h-20 flex items-center justify-between">
@@ -338,7 +343,10 @@ function ProjectModal({ item, onClose }) {
           aria-labelledby="modal-title"
         >
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-            <h3 id="modal-title" className="text-lg font-semibold text-gray-900">
+            <h3
+              id="modal-title"
+              className="text-lg font-semibold text-gray-900"
+            >
               Ficha del proyecto
             </h3>
             <button
@@ -445,7 +453,9 @@ function KPIs({ data }) {
           <div className="text-3xl font-semibold">{clientes}</div>
         </div>
         <div className="rounded-2xl border border-gray-200 p-5 bg-white">
-          <div className="text-sm text-gray-500">Total histórico aproximado</div>
+          <div className="text-sm text-gray-500">
+            Total histórico aproximado
+          </div>
           <div className="text-2xl font-semibold">{toCOP(total)}</div>
         </div>
       </div>
@@ -700,9 +710,7 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
 
             <div className="mt-3 flex flex-wrap gap-1.5">
               {(d.tipo || []).length ? (
-                (d.tipo || []).map((t, idx) => (
-                  <TypeBadge key={idx} label={t} />
-                ))
+                (d.tipo || []).map((t, idx) => <TypeBadge key={idx} label={t} />)
               ) : (
                 <span className="text-sm text-gray-600">—</span>
               )}
@@ -906,6 +914,7 @@ function ActivitiesSection() {
   const [catIndex, setCatIndex] = useState(0);
   const [imgIndex, setImgIndex] = useState(0);
   const currentList = groups[catIndex]?.items ?? [];
+  theCurrent: null;
   const current = currentList[imgIndex];
 
   useEffect(() => {
@@ -1057,6 +1066,8 @@ export default function App() {
   const [sortBy, setSortBy] = useState("fecha");
   const [sortDir, setSortDir] = useState("asc");
 
+  const formRef = useRef(null);
+
   useEffect(() => {
     const clean = (rawProjects || []).map((r) => ({
       ...r,
@@ -1069,10 +1080,25 @@ export default function App() {
     setData(clean);
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSending(true);
-    setTimeout(() => setSending(false), 1000);
+    if (!formRef.current) return;
+    try {
+      setSending(true);
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+      );
+      formRef.current.reset();
+      alert("✅ Mensaje enviado. Te contactaremos pronto.");
+    } catch (err) {
+      console.error(err);
+      alert("❌ No se pudo enviar. Verifica conexión y credenciales de EmailJS.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const toggleSort = (key) => {
@@ -1173,7 +1199,10 @@ export default function App() {
               >
                 {CONFIG.nombre}
               </motion.h1>
-              <p className="mt-3 text-gray-700" style={{ fontSize: "clamp(16px, 2.2vw, 20px)" }}>
+              <p
+                className="mt-3 text-gray-700"
+                style={{ fontSize: "clamp(16px, 2.2vw, 20px)" }}
+              >
                 {CONFIG.lema}
               </p>
               <p className="mt-4 text-gray-700 leading-relaxed">
@@ -1238,20 +1267,25 @@ export default function App() {
         </section>
 
         {/* QUIÉNES SOMOS */}
-        <section id="quienes" className="scroll-mt-24 py-14 md:py-24 bg-gray-50">
+        <section
+          id="quienes"
+          className="scroll-mt-24 py-14 md:py-24 bg-gray-50"
+        >
           <div className="max-w-7xl mx-auto px-3 sm:px-4">
             <FadeIn>
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
                 Quiénes somos
               </h2>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                FerreExpress S.A.S. es una empresa de obras civiles especializada en
-                movimiento de tierras, construcción y mantenimiento de infraestructura.
-                Contamos con equipo y operación propia (maquinaria amarilla y transporte)
-                y abastecemos materiales provenientes de canteras certificadas, garantizando
-                trazabilidad, calidad de suministro y cumplimiento normativo en cada proyecto.
-                Operamos en Cali y ciudades aledañas, atendiendo clientes del sector público
-                y privado con un enfoque en seguridad, productividad y sostenibilidad (gestión
+                FerreExpress S.A.S. es una empresa de obras civiles
+                especializada en movimiento de tierras, construcción y
+                mantenimiento de infraestructura. Contamos con equipo y
+                operación propia (maquinaria amarilla y transporte) y
+                abastecemos materiales provenientes de canteras certificadas,
+                garantizando trazabilidad, calidad de suministro y cumplimiento
+                normativo en cada proyecto. Operamos en Cali y ciudades
+                aledañas, atendiendo clientes del sector público y privado con
+                un enfoque en seguridad, productividad y sostenibilidad (gestión
                 responsable de RCD y disposición en sitios autorizados).
               </p>
             </FadeIn>
@@ -1260,47 +1294,81 @@ export default function App() {
               <HoverCard>
                 <h3 className="text-lg font-semibold text-gray-900">Misión</h3>
                 <p className="mt-2 text-gray-700">
-                  Ejecutar con excelencia proyectos de movimiento de tierras y obras civiles, eléctricas
-                  y mecánicas, así como construcción, remodelación y mantenimiento de viviendas,
-                  edificios y vías, asegurando:
+                  Ejecutar con excelencia proyectos de movimiento de tierras y
+                  obras civiles, eléctricas y mecánicas, así como construcción,
+                  remodelación y mantenimiento de viviendas, edificios y vías,
+                  asegurando:
                 </p>
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                  <li>Calidad técnica (especificaciones, ensayos y control de materiales).</li>
+                  <li>
+                    Calidad técnica (especificaciones, ensayos y control de
+                    materiales).
+                  </li>
                   <li>Cumplimiento en tiempos, costos y alcance.</li>
-                  <li>Seguridad y salud en el trabajo como prioridad operativa.</li>
-                  <li>Gestión ambiental responsable y disposición certificada de escombros.</li>
+                  <li>
+                    Seguridad y salud en el trabajo como prioridad operativa.
+                  </li>
+                  <li>
+                    Gestión ambiental responsable y disposición certificada de
+                    escombros.
+                  </li>
                 </ul>
               </HoverCard>
 
               <HoverCard>
                 <h3 className="text-lg font-semibold text-gray-900">Visión</h3>
-                <p className="mt-2 text-gray-700">Consolidarnos como un referente regional mediante:</p>
+                <p className="mt-2 text-gray-700">
+                  Consolidarnos como un referente regional mediante:
+                </p>
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                  <li>Desarrollo de urbanizaciones con altos estándares de habitabilidad.</li>
-                  <li>Participación competitiva en licitaciones gubernamentales.</li>
-                  <li>Fortalecimiento de proyectos viales urbanos y rurales.</li>
+                  <li>
+                    Desarrollo de urbanizaciones con altos estándares de
+                    habitabilidad.
+                  </li>
+                  <li>
+                    Participación competitiva en licitaciones gubernamentales.
+                  </li>
+                  <li>
+                    Fortalecimiento de proyectos viales urbanos y rurales.
+                  </li>
                 </ul>
               </HoverCard>
             </div>
 
             <div className="mt-8 grid md:grid-cols-2 gap-6">
               <HoverCard>
-                <h3 className="text-lg font-semibold text-gray-900">Nuestros valores</h3>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Nuestros valores
+                </h3>
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                  <li>Integridad y transparencia: trazabilidad de origen y disposición.</li>
+                  <li>
+                    Integridad y transparencia: trazabilidad de origen y
+                    disposición.
+                  </li>
                   <li>Seguridad ante todo: HSE como cultura.</li>
-                  <li>Excelencia operativa: productividad y mejora continua.</li>
-                  <li>Cumplimiento: planificación realista y reportes al cliente.</li>
-                  <li>Sostenibilidad: manejo responsable de RCD y respeto normativo.</li>
+                  <li>
+                    Excelencia operativa: productividad y mejora continua.
+                  </li>
+                  <li>
+                    Cumplimiento: planificación realista y reportes al cliente.
+                  </li>
+                  <li>
+                    Sostenibilidad: manejo responsable de RCD y respeto
+                    normativo.
+                  </li>
                 </ul>
               </HoverCard>
 
               <HoverCard>
-                <h3 className="text-lg font-semibold text-gray-900">Nuestros diferenciales</h3>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Nuestros diferenciales
+                </h3>
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
                   <li>Equipo propio y disponibilidad.</li>
                   <li>Calidad verificada: certificados y ensayos.</li>
-                  <li>Documentación al día: pólizas, hojas de vida y permisos.</li>
+                  <li>
+                    Documentación al día: pólizas, hojas de vida y permisos.
+                  </li>
                   <li>Manifiestos de disposición final y manejo de RCD.</li>
                   <li>Atención local y tiempos de respuesta ágiles.</li>
                 </ul>
@@ -1310,12 +1378,18 @@ export default function App() {
         </section>
 
         {/* CAPACIDADES */}
-        <section id="capacidades" className="scroll-mt-24 py-14 md:py-24 bg-white">
+        <section
+          id="capacidades"
+          className="scroll-mt-24 py-14 md:py-24 bg-white"
+        >
           <div className="max-w-7xl mx-auto px-3 sm:px-4">
             <FadeIn>
-              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Capacidades principales</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+                Capacidades principales
+              </h2>
               <p className="mt-3 text-gray-600">
-                Soluciones integrales de obra y suministro para acompañar todo el ciclo del proyecto.
+                Soluciones integrales de obra y suministro para acompañar todo
+                el ciclo del proyecto.
               </p>
             </FadeIn>
 
@@ -1368,79 +1442,33 @@ export default function App() {
         <ActivitiesSection />
 
         {/* SERVICIOS */}
-        <section id="servicios" className="scroll-mt-24 py-14 md:py-24 bg-gray-50">
+        <section
+          id="servicios"
+          className="scroll-mt-24 py-14 md:py-24 bg-gray-50"
+        >
           <div className="max-w-7xl mx-auto px-3 sm:px-4">
             <FadeIn>
-              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Servicios</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+                Servicios
+              </h2>
               <p className="mt-3 text-gray-600 max-w-2xl">
-                Selecciona lo que necesitas. También ofrecemos alquiler de maquinaria, venta de materiales e interventoría.
+                Selecciona lo que necesitas. También ofrecemos alquiler de
+                maquinaria, venta de materiales e interventoría.
               </p>
             </FadeIn>
 
             <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  titulo: "Demolición",
-                  desc: "Planeación, permisos y ejecución segura.",
-                  bullets: [
-                    { icon: ShieldCheck, text: "Protocolos HSE y control perimetral." },
-                    { icon: ClipboardCheck, text: "Gestión de permisos y actas." },
-                    { icon: FileCheck2, text: "Manifiestos de RCD certificados." },
-                  ],
-                },
-                {
-                  titulo: "Excavaciones",
-                  desc: "Excavación y conformación de terrazas.",
-                  bullets: [
-                    { icon: Ruler, text: "Nivelación y replanteo topográfico." },
-                    { icon: Truck, text: "Flota propia para acarreo y disposición." },
-                    { icon: ShieldCheck, text: "Estabilidad de taludes y drenajes." },
-                  ],
-                },
-                {
-                  titulo: "Movimiento de tierra",
-                  desc: "Cortes, llenos y transporte.",
-                  bullets: [
-                    { icon: Layers, text: "Subrasante y compactación por capas." },
-                    { icon: TimerReset, text: "Ejecución bajo cronograma pactado." },
-                    { icon: FileCheck2, text: "Ensayos Proctor y densidades in situ." },
-                  ],
-                },
-                {
-                  titulo: "Urbanismo",
-                  desc: "Sardineles, andenes y paisajismo.",
-                  bullets: [
-                    { icon: Route, text: "Trazados precisos y acabados limpios." },
-                    { icon: ClipboardCheck, text: "Especificaciones y fichas técnicas." },
-                    { icon: ShieldCheck, text: "Señalización y orden en obra." },
-                  ],
-                },
-                {
-                  titulo: "Vías",
-                  desc: "Placas huella, pavimentos y subrasantes.",
-                  bullets: [
-                    { icon: Ruler, text: "Control de cotas y pendientes." },
-                    { icon: FileCheck2, text: "Base/subbase con certificados." },
-                    { icon: Hammer, text: "Juntas, curado y acabados de calidad." },
-                  ],
-                },
-                {
-                  titulo: "Edificaciones",
-                  desc: "Obras civiles y adecuaciones.",
-                  bullets: [
-                    { icon: Building2, text: "Estructuras menores y muros." },
-                    { icon: ClipboardCheck, text: "Control de materiales y actas." },
-                    { icon: ShieldCheck, text: "Seguridad y orden en frentes." },
-                  ],
-                },
-              ].map((s, idx) => (
+              {servicios.map((s, idx) => (
                 <HoverCard key={s.titulo} delay={idx * 0.04}>
-                  <h3 className="text-lg font-semibold text-gray-900">{s.titulo}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {s.titulo}
+                  </h3>
                   <p className="mt-2 text-sm text-gray-600">{s.desc}</p>
                   <ul className="mt-4 space-y-2 text-sm text-gray-700">
                     {s.bullets.map(({ icon: Icon, text }) => (
                       <li key={text} className="flex items-start gap-2">
-                        <Icon size={16} className="mt-0.5 text-emerald-600" /> {text}
+                        <Icon size={16} className="mt-0.5 text-emerald-600" />{" "}
+                        {text}
                       </li>
                     ))}
                   </ul>
@@ -1462,8 +1490,12 @@ export default function App() {
             <div className="flex items-end justify-between gap-4">
               <FadeIn>
                 <div>
-                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Proyectos</h2>
-                  <p className="mt-3 text-gray-600">Listado completo con búsqueda, filtros y orden.</p>
+                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+                    Proyectos
+                  </h2>
+                  <p className="mt-3 text-gray-600">
+                    Listado completo con búsqueda, filtros y orden.
+                  </p>
                 </div>
               </FadeIn>
             </div>
@@ -1484,8 +1516,12 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-3 sm:px-4 grid lg:grid-cols-2 gap-7">
             <FadeIn>
               <div className="lg:col-span-1">
-                <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Hablemos!</h2>
-                <p className="mt-3 text-gray-600">Cuéntanos tu idea y armamos una propuesta.</p>
+                <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+                  Hablemos!
+                </h2>
+                <p className="mt-3 text-gray-600">
+                  Cuéntanos tu idea y armamos una propuesta.
+                </p>
 
                 <div className="mt-6 space-y-3 text-sm">
                   <div className="flex items-center gap-2">
@@ -1504,13 +1540,26 @@ export default function App() {
             <FadeIn delay={0.05}>
               <div className="lg:col-span-2">
                 <form
+                  ref={formRef}
                   onSubmit={handleSubmit}
                   className="rounded-2xl border border-gray-200 p-4 sm:p-6"
                 >
+                  {/* Campo oculto para {{time}} */}
+                  <input
+                    type="hidden"
+                    name="time"
+                    value={new Date().toLocaleString("es-CO", {
+                      dateStyle: "full",
+                      timeStyle: "short",
+                    })}
+                  />
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm text-gray-600">Nombre</label>
                       <input
+                        name="from_name"
+                        required
                         className="w-full mt-1 px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2"
                         placeholder="Tu nombre"
                       />
@@ -1519,6 +1568,8 @@ export default function App() {
                       <label className="text-sm text-gray-600">Correo</label>
                       <input
                         type="email"
+                        name="reply_to"
+                        required
                         className="w-full mt-1 px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2"
                         placeholder="tu@correo.com"
                       />
@@ -1527,14 +1578,16 @@ export default function App() {
                   <div className="mt-4">
                     <label className="text-sm text-gray-600">Mensaje</label>
                     <textarea
+                      name="message"
                       rows={6}
+                      required
                       className="w-full mt-1 px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2"
                       placeholder="Cuéntanos sobre tu proyecto"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white hover:opacity-90"
+                    className="mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white hover:opacity-90 disabled:opacity-60"
                     style={{ background: CONFIG.brand.secondary }}
                     disabled={sending}
                   >
@@ -1550,7 +1603,8 @@ export default function App() {
         <footer className="border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-3 sm:px-4 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
             <div className="text-gray-500">
-              © {new Date().getFullYear()} {CONFIG.nombre} — Todos los derechos reservados.
+              © {new Date().getFullYear()} {CONFIG.nombre} — Todos los derechos
+              reservados.
             </div>
             <div className="flex items-center gap-4 text-gray-500">
               <a href={CONFIG.redes.instagram} className="hover:text-gray-900">
