@@ -5,7 +5,8 @@ import imgPapeles from "./assets/destacados/papeles-del-cauca.jpeg";
 import imgMonticello from "./assets/destacados/monticello.png";
 import imgBolivar from "./assets/destacados/colegio-bolivar.jpg";
 import heroBg from "./assets/logos/banner.png";
-import { useEffect, useMemo, useState } from "react";
+
+import { useEffect, useMemo, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -28,14 +29,15 @@ import {
   Ruler,
   TimerReset,
   FileCheck2,
+  Menu,
 } from "lucide-react";
-import rawProjects from "./projects.json";
 
+import rawProjects from "./projects.json";
 import logo1 from "./assets/logos/LOGOFERREEXPRESS.jpg";
 import logo2 from "./assets/logos/LogoMacaAltaCalidad.png";
 
 /* =========================
-   CONFIGURACIÓN RÁPIDA
+   CONFIGURACIÓN
 ========================= */
 const CONFIG = {
   nombre: "FerreExpress S.A.S.",
@@ -52,7 +54,7 @@ const CONFIG = {
 };
 
 /* =========================
-   ANIMACIONES BASE
+   ANIMACIONES
 ========================= */
 const FadeIn = ({ children, y = 14, delay = 0 }) => (
   <motion.div
@@ -113,15 +115,6 @@ const normTipo = (v) => {
     .filter(Boolean);
 };
 
-const normalize = (s) =>
-  (s || "")
-    .toString()
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-
 /* =========================
    CHIPS DE TIPO
 ========================= */
@@ -150,6 +143,174 @@ const getTypeStyle = (t) => {
 };
 
 /* =========================
+   HEADER (FIJO + DRAWER MÓVIL)
+========================= */
+function Header() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const firstLinkRef = useRef(null);
+
+  // Sombra/altura al hacer scroll
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Bloqueo de scroll cuando el drawer está abierto + Escape para cerrar
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = open ? "hidden" : prev || "";
+    if (open) setTimeout(() => firstLinkRef.current?.focus(), 0);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev || "";
+    };
+  }, [open]);
+
+  const navLinks = [
+    { href: "#quienes", label: "Quiénes somos" },
+    { href: "#capacidades", label: "Capacidades" },
+    { href: "#actividades", label: "Actividades" },
+    { href: "#servicios", label: "Servicios" },
+    { href: "#proyectos", label: "Proyectos" },
+    { href: "#contacto", label: "Contacto" },
+  ];
+
+  return (
+    <>
+      {/* Enlace para saltar al contenido (accesibilidad) */}
+      <a
+        href="#inicio"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-white focus:border focus:px-3 focus:py-1 focus:rounded-lg focus:z-[200]"
+      >
+        Saltar al contenido
+      </a>
+
+      <header
+        role="banner"
+        className={`fixed top-0 left-0 right-0 z-[100] border-b border-[#e0a90d]
+          transition-all duration-300
+          ${scrolled ? "shadow-[0_10px_30px_-18px_rgba(17,24,39,.45)]" : "shadow-none"}`}
+        style={{ background: CONFIG.brand.primary }}
+      >
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 h-16 md:h-20 flex items-center justify-between">
+          {/* Logo + Inicio */}
+          <a
+            href="#inicio"
+            className="flex items-center gap-2 sm:gap-3"
+            aria-label="Ir al inicio"
+          >
+            <img
+              src={logo1}
+              alt="FerreExpress - Logo principal"
+              className="h-10 sm:h-12 md:h-14 w-auto drop-shadow-sm"
+            />
+            <img
+              src={logo2}
+              alt="Marca asociada"
+              className="h-10 sm:h-12 md:h-14 w-auto drop-shadow-sm"
+            />
+          </a>
+
+          {/* Navegación desktop */}
+          <nav
+            className="hidden md:flex items-center gap-6 text-sm"
+            aria-label="Navegación principal"
+          >
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* CTA desktop */}
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white shadow-md hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2"
+              style={{
+                background: CONFIG.brand.secondary,
+                boxShadow: "0 8px 24px -12px rgba(17,24,39,.45)",
+              }}
+            >
+              Cotiza ahora <ArrowRight size={18} />
+            </a>
+          </div>
+
+          {/* Botón menú móvil */}
+          <button
+            onClick={() => setOpen(true)}
+            aria-label="Abrir menú"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-lg border border-black/10 bg-white/50 backdrop-blur"
+          >
+            <Menu size={20} />
+          </button>
+        </div>
+
+        {/* Drawer móvil */}
+        {open && (
+          <>
+            <div
+              className="fixed inset-0 bg-black/40 backdrop-blur-[2px] z-[99]"
+              onClick={() => setOpen(false)}
+              aria-hidden
+            />
+            <aside
+              role="dialog"
+              aria-modal="true"
+              className="fixed top-0 right-0 h-full w-[88%] max-w-xs bg-white z-[120] shadow-xl border-l border-gray-200"
+            >
+              <div className="flex items-center justify-between px-4 h-16 border-b">
+                <span className="font-semibold">Menú</span>
+                <button
+                  onClick={() => setOpen(false)}
+                  className="p-2 rounded-lg hover:bg-gray-100"
+                  aria-label="Cerrar menú"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+              <nav className="p-4 space-y-1" aria-label="Navegación móvil">
+                {navLinks.map((l, idx) => (
+                  <a
+                    key={l.href}
+                    ref={idx === 0 ? firstLinkRef : null}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="block px-3 py-3 rounded-lg text-[#111827] hover:bg-gray-50"
+                  >
+                    {l.label}
+                  </a>
+                ))}
+                <a
+                  href="#contacto"
+                  onClick={() => setOpen(false)}
+                  className="mt-2 block px-3 py-3 rounded-xl text-center text-white"
+                  style={{ background: CONFIG.brand.secondary }}
+                >
+                  Cotiza ahora
+                </a>
+              </nav>
+            </aside>
+          </>
+        )}
+      </header>
+    </>
+  );
+}
+
+/* =========================
    MODAL DE PROYECTO
 ========================= */
 function ProjectModal({ item, onClose }) {
@@ -165,16 +326,19 @@ function ProjectModal({ item, onClose }) {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-[60]">
+    <div className="fixed inset-0 z-[130]">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
       <div className="absolute inset-0 grid place-items-center p-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           className="w-full max-w-2xl rounded-2xl bg-white border border-gray-200 shadow-xl"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
         >
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-            <h3 className="text-lg font-semibold text-gray-900">
+            <h3 id="modal-title" className="text-lg font-semibold text-gray-900">
               Ficha del proyecto
             </h3>
             <button
@@ -281,9 +445,7 @@ function KPIs({ data }) {
           <div className="text-3xl font-semibold">{clientes}</div>
         </div>
         <div className="rounded-2xl border border-gray-200 p-5 bg-white">
-          <div className="text-sm text-gray-500">
-            Total histórico aproximado
-          </div>
+          <div className="text-sm text-gray-500">Total histórico aproximado</div>
           <div className="text-2xl font-semibold">{toCOP(total)}</div>
         </div>
       </div>
@@ -292,7 +454,7 @@ function KPIs({ data }) {
 }
 
 /* =========================
-   TABLA DE PROYECTOS
+   TABLA / CARDS DE PROYECTOS (RESPONSIVE)
 ========================= */
 function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
   const [query, setQuery] = useState("");
@@ -320,18 +482,12 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
 
   const filtered = useMemo(() => {
     const rows = data.filter((d) => {
-      const matchQuery = (
-        d.cliente +
-        " " +
-        d.obra +
-        " " +
-        (d.descripcion || "")
-      )
+      const hay = (d.cliente + " " + d.obra + " " + (d.descripcion || ""))
         .toLowerCase()
         .includes(query.toLowerCase());
-      const matchYear = year ? (d.fecha || "").startsWith(year) : true;
-      const matchTipo = tipo ? (d.tipo || []).includes(tipo) : true;
-      return matchQuery && matchYear && matchTipo;
+      const byYear = year ? (d.fecha || "").startsWith(year) : true;
+      const byTipo = tipo ? (d.tipo || []).includes(tipo) : true;
+      return hay && byYear && byTipo;
     });
     const dir = sortDir === "desc" ? -1 : 1;
     rows.sort((a, b) => {
@@ -360,8 +516,9 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
 
   return (
     <div className="mt-6">
+      {/* Filtros */}
       <FadeIn>
-        <div className="grid md:grid-cols-5 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
           <input
             className="px-3 py-2 rounded-xl border border-gray-200"
             placeholder="Buscar por cliente, obra o descripción"
@@ -403,12 +560,13 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
             <option value={100}>100 por página</option>
           </select>
           <div className="px-3 py-2 rounded-xl border border-gray-200 flex items-center text-sm text-gray-600">
-            {startIdx + 1}–{endIdx} de {total}
+            {total ? `${startIdx + 1}–${endIdx} de ${total}` : "0 resultados"}
           </div>
         </div>
       </FadeIn>
 
-      <div className="mt-4 border border-gray-200 rounded-2xl overflow-hidden">
+      {/* Vista TABLE (md+) */}
+      <div className="hidden md:block mt-4 border border-gray-200 rounded-2xl overflow-hidden">
         <div className="max-h-[65vh] overflow-auto">
           <table className="min-w-full text-sm">
             <thead className="bg-gray-50 text-gray-600 sticky top-0 z-10">
@@ -477,14 +635,21 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
                   </td>
                 </tr>
               ))}
+              {!visible.length && (
+                <tr>
+                  <td colSpan={7} className="p-6 text-center text-gray-500">
+                    Sin resultados con los filtros actuales.
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
 
-        {/* Paginador */}
+        {/* Paginador desktop */}
         <div className="flex items-center justify-between px-3 py-2">
           <div className="text-xs text-gray-500">
-            {startIdx + 1}–{endIdx} de {total} resultados
+            {total ? `${startIdx + 1}–${endIdx} de ${total} resultados` : "—"}
           </div>
           <div className="flex items-center gap-2">
             <button
@@ -496,6 +661,82 @@ function ProjectsExplorer({ data, onSort, sortBy, sortDir }) {
             </button>
             <div className="text-sm text-gray-600">
               Página {page} / {totalPages}
+            </div>
+            <button
+              className="px-3 py-1 rounded-lg border border-gray-200 disabled:opacity-50"
+              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+              disabled={page === totalPages}
+            >
+              Siguiente
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Vista CARDS (móvil) */}
+      <div className="md:hidden mt-4 space-y-3">
+        {visible.map((d, i) => (
+          <div
+            key={i}
+            className="rounded-2xl border border-gray-200 p-4 bg-white shadow-sm"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="min-w-0">
+                <div className="text-xs text-gray-500">{d.fecha || "—"}</div>
+                <div className="font-semibold text-gray-900 truncate">
+                  {d.cliente || "—"}
+                </div>
+                <div className="text-sm text-gray-700 truncate">
+                  {d.obra || "—"}
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-xs text-gray-500">Valor</div>
+                <div className="text-sm font-medium">
+                  {d.valor_cop ? toCOP(Number(d.valor_cop)) : "—"}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {(d.tipo || []).length ? (
+                (d.tipo || []).map((t, idx) => (
+                  <TypeBadge key={idx} label={t} />
+                ))
+              ) : (
+                <span className="text-sm text-gray-600">—</span>
+              )}
+            </div>
+
+            <div className="mt-3 flex items-center justify-between">
+              <div className="text-sm text-gray-600 truncate">
+                {d.contacto || "—"}
+              </div>
+              <button
+                onClick={() => setSelected(d)}
+                className="text-xs px-3 py-1.5 rounded-lg border border-gray-200"
+              >
+                Ver ficha
+              </button>
+            </div>
+          </div>
+        ))}
+
+        {/* Paginador móvil */}
+        <div className="flex items-center justify-between px-1 py-2">
+          <div className="text-xs text-gray-500">
+            {total ? `${startIdx + 1}–${endIdx} de ${total}` : "—"}
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              className="px-3 py-1 rounded-lg border border-gray-200 disabled:opacity-50"
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={page === 1}
+            >
+              Anterior
+            </button>
+            <div className="text-sm text-gray-600">
+              {page} / {totalPages}
             </div>
             <button
               className="px-3 py-1 rounded-lg border border-gray-200 disabled:opacity-50"
@@ -537,7 +778,6 @@ function FeaturedProjects({ data }) {
     imgBolivar,
   ];
 
-  // Busca el proyecto que mejor coincida por cliente u obra (minúsculas)
   const findProject = (needle) => {
     const n = needle.toLowerCase();
     return (
@@ -605,7 +845,7 @@ function FeaturedProjects({ data }) {
           Proyectos destacados
         </h3>
       </FadeIn>
-      <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {featured.map(({ name, item, foto }) => (
           <Card key={name} name={name} item={item} foto={foto} />
         ))}
@@ -615,8 +855,7 @@ function FeaturedProjects({ data }) {
 }
 
 /* =========================
-   ACTIVIDADES (carruseles)
-   (reemplaza “vialidades” → “vías”)
+   ACTIVIDADES (carruseles + lightbox)
 ========================= */
 function ActivitiesSection() {
   const modules = import.meta.glob(
@@ -663,7 +902,6 @@ function ActivitiesSection() {
     );
   }, [modules]);
 
-  // Lightbox
   const [open, setOpen] = useState(false);
   const [catIndex, setCatIndex] = useState(0);
   const [imgIndex, setImgIndex] = useState(0);
@@ -690,7 +928,7 @@ function ActivitiesSection() {
 
   return (
     <section id="actividades" className="scroll-mt-24 py-16 md:py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4">
         <FadeIn>
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
             Actividades de obra
@@ -721,7 +959,7 @@ function ActivitiesSection() {
                       setImgIndex(ii);
                       setOpen(true);
                     }}
-                    className="relative flex-none w-64 md:w-72 snap-start rounded-xl overflow-hidden border border-gray-200 bg-white"
+                    className="relative flex-none w-56 sm:w-64 md:w-72 snap-start rounded-xl overflow-hidden border border-gray-200 bg-white"
                     aria-label={`Abrir imagen ${group.category} ${ii + 1}`}
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 240, damping: 18 }}
@@ -731,7 +969,7 @@ function ActivitiesSection() {
                       alt={`${group.category} ${ii + 1}`}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-44 object-cover"
+                      className="w-full h-40 sm:h-44 object-cover"
                     />
                     <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/50 to-transparent p-2">
                       <div className="text-xs text-white/90 truncate">
@@ -748,7 +986,7 @@ function ActivitiesSection() {
         {/* Lightbox */}
         {open && current && (
           <div
-            className="fixed inset-0 z-[70] bg-black/70 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[140] bg-black/70 flex items-center justify-center p-4"
             onClick={() => setOpen(false)}
           >
             <motion.div
@@ -811,90 +1049,7 @@ function ActivitiesSection() {
 }
 
 /* =========================
-   NAVBAR FIJA (fuera del flujo)
-========================= */
-function Header() {
-  return (
-    <header
-      role="banner"
-      className="fixed top-0 left-0 right-0 z-[100] border-b border-[#e0a90d] shadow-[0_10px_30px_-18px_rgba(17,24,39,.45)]"
-      style={{ background: "#F9BF20" }}
-    >
-      <div className="max-w-6xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
-        {/* Logos más grandes */}
-        <a
-          href="#inicio"
-          className="flex items-center gap-3"
-          aria-label="Ir al inicio"
-        >
-          <img
-            src={logo1}
-            alt="FerreExpress - Logo principal"
-            className="h-12 md:h-14 w-auto drop-shadow-sm"
-          />
-        </a>
-
-        {/* Navegación */}
-        <nav
-          className="hidden md:flex items-center gap-6 text-sm"
-          aria-label="Navegación principal"
-        >
-          <a
-            href="#quienes"
-            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
-          >
-            Quiénes somos
-          </a>
-          <a
-            href="#capacidades"
-            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
-          >
-            Capacidades
-          </a>
-          <a
-            href="#actividades"
-            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
-          >
-            Actividades
-          </a>
-          <a
-            href="#servicios"
-            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
-          >
-            Servicios
-          </a>
-          <a
-            href="#proyectos"
-            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
-          >
-            Proyectos
-          </a>
-          <a
-            href="#contacto"
-            className="text-[#111827]/90 hover:text-[#111827] hover:underline underline-offset-4"
-          >
-            Contacto
-          </a>
-        </nav>
-
-        {/* CTA con contraste */}
-        <a
-          href="#contacto"
-          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-white shadow-md hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2"
-          style={{
-            background: "#111827",
-            boxShadow: "0 8px 24px -12px rgba(17,24,39,.45)",
-          }}
-        >
-          Cotiza ahora <ArrowRight size={18} />
-        </a>
-      </div>
-    </header>
-  );
-}
-
-/* =========================
-   APLICACIÓN PRINCIPAL
+   APP
 ========================= */
 export default function App() {
   const [sending, setSending] = useState(false);
@@ -933,7 +1088,6 @@ export default function App() {
     0
   );
 
-  /* ===== SERVICIOS (con beneficios diferenciados) ===== */
   const servicios = [
     {
       titulo: "Demolición",
@@ -994,31 +1148,32 @@ export default function App() {
   return (
     <>
       <Header />
-      {/* fijo y fuera del flujo del contenido scrollable */}
       <main
+        id="contenido"
         className="min-h-screen bg-white text-gray-800 pt-16 md:pt-20"
         style={{ scrollBehavior: "smooth" }}
       >
-        {/* ===== HERO ===== */}
+        {/* HERO */}
         <section id="inicio" className="relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" aria-hidden>
             <div
-              className="absolute -top-16 -right-16 w-72 h-72 rounded-full blur-3xl opacity-20"
+              className="absolute -top-16 -right-16 w-56 sm:w-72 h-56 sm:h-72 rounded-full blur-3xl opacity-20"
               style={{ background: CONFIG.brand.primary }}
             />
           </div>
 
-          <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-12 md:py-20 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
             <FadeIn>
               <motion.h1
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900"
+                className="font-bold tracking-tight text-gray-900"
+                style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
               >
                 {CONFIG.nombre}
               </motion.h1>
-              <p className="mt-3 text-lg md:text-xl text-gray-700">
+              <p className="mt-3 text-gray-700" style={{ fontSize: "clamp(16px, 2.2vw, 20px)" }}>
                 {CONFIG.lema}
               </p>
               <p className="mt-4 text-gray-700 leading-relaxed">
@@ -1066,12 +1221,14 @@ export default function App() {
                 <div
                   className="aspect-video w-full rounded-2xl border border-gray-200 overflow-hidden shadow-sm bg-cover bg-center"
                   style={{ backgroundImage: `url(${heroBg})` }}
+                  role="img"
+                  aria-label="Equipo y obras de FerreExpress"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+                <div className="absolute -bottom-4 -right-4 bg-white rounded-xl border border-gray-200 p-3 sm:p-4 shadow-sm">
                   <div className="text-xs text-gray-500">
                     Total histórico aproximado
                   </div>
-                  <div className="text-2xl font-semibold">
+                  <div className="text-xl sm:text-2xl font-semibold">
                     {toCOP(totalHistorico) || "—"}
                   </div>
                 </div>
@@ -1080,26 +1237,21 @@ export default function App() {
           </div>
         </section>
 
-        {/* ===== QUIÉNES SOMOS / MISIÓN / VISIÓN / VALORES ===== */}
-        <section
-          id="quienes"
-          className="scroll-mt-24 py-16 md:py-24 bg-gray-50"
-        >
-          <div className="max-w-6xl mx-auto px-4">
+        {/* QUIÉNES SOMOS */}
+        <section id="quienes" className="scroll-mt-24 py-14 md:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4">
             <FadeIn>
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
                 Quiénes somos
               </h2>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                FerreExpress S.A.S. es una empresa de obras civiles
-                especializada en movimiento de tierras, construcción y
-                mantenimiento de infraestructura. Contamos con equipo y
-                operación propia (maquinaria amarilla y transporte) y
-                abastecemos materiales provenientes de canteras certificadas,
-                garantizando trazabilidad, calidad de suministro y cumplimiento
-                normativo en cada proyecto. Operamos en Cali y ciudades
-                aledañas, atendiendo clientes del sector público y privado con
-                un enfoque en seguridad, productividad y sostenibilidad (gestión
+                FerreExpress S.A.S. es una empresa de obras civiles especializada en
+                movimiento de tierras, construcción y mantenimiento de infraestructura.
+                Contamos con equipo y operación propia (maquinaria amarilla y transporte)
+                y abastecemos materiales provenientes de canteras certificadas, garantizando
+                trazabilidad, calidad de suministro y cumplimiento normativo en cada proyecto.
+                Operamos en Cali y ciudades aledañas, atendiendo clientes del sector público
+                y privado con un enfoque en seguridad, productividad y sostenibilidad (gestión
                 responsable de RCD y disposición en sitios autorizados).
               </p>
             </FadeIn>
@@ -1108,96 +1260,48 @@ export default function App() {
               <HoverCard>
                 <h3 className="text-lg font-semibold text-gray-900">Misión</h3>
                 <p className="mt-2 text-gray-700">
-                  Ejecutar con excelencia proyectos de movimiento de tierras y
-                  obras civiles, eléctricas y mecánicas, así como construcción,
-                  remodelación y mantenimiento de viviendas, edificios y vías,
-                  asegurando:
+                  Ejecutar con excelencia proyectos de movimiento de tierras y obras civiles, eléctricas
+                  y mecánicas, así como construcción, remodelación y mantenimiento de viviendas,
+                  edificios y vías, asegurando:
                 </p>
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                  <li>
-                    Calidad técnica (especificaciones, ensayos y control de
-                    materiales).
-                  </li>
+                  <li>Calidad técnica (especificaciones, ensayos y control de materiales).</li>
                   <li>Cumplimiento en tiempos, costos y alcance.</li>
-                  <li>
-                    Seguridad y salud en el trabajo como prioridad operativa.
-                  </li>
-                  <li>
-                    Gestión ambiental responsable, con trazabilidad de
-                    materiales y disposición certificada de escombros.
-                  </li>
+                  <li>Seguridad y salud en el trabajo como prioridad operativa.</li>
+                  <li>Gestión ambiental responsable y disposición certificada de escombros.</li>
                 </ul>
               </HoverCard>
 
               <HoverCard>
                 <h3 className="text-lg font-semibold text-gray-900">Visión</h3>
-                <p className="mt-2 text-gray-700">
-                  Consolidarnos como un referente regional mediante:
-                </p>
+                <p className="mt-2 text-gray-700">Consolidarnos como un referente regional mediante:</p>
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                  <li>
-                    La construcción de urbanizaciones de vivienda con altos
-                    estándares de habitabilidad.
-                  </li>
-                  <li>
-                    La participación competitiva en licitaciones
-                    gubernamentales, cumpliendo requisitos técnicos, legales y
-                    de experiencia.
-                  </li>
-                  <li>
-                    El fortalecimiento de proyectos viales urbanos y rurales,
-                    ampliando capacidad operativa, flota y convenios con
-                    canteras certificadas.
-                  </li>
+                  <li>Desarrollo de urbanizaciones con altos estándares de habitabilidad.</li>
+                  <li>Participación competitiva en licitaciones gubernamentales.</li>
+                  <li>Fortalecimiento de proyectos viales urbanos y rurales.</li>
                 </ul>
               </HoverCard>
             </div>
 
             <div className="mt-8 grid md:grid-cols-2 gap-6">
               <HoverCard>
-                <h3 className="text-lg font-semibold text-gray-900">
-                  Nuestros valores
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900">Nuestros valores</h3>
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                  <li>
-                    Integridad y transparencia: trazabilidad de origen y
-                    disposición.
-                  </li>
-                  <li>
-                    Seguridad ante todo: HSE como cultura, no como trámite.
-                  </li>
-                  <li>
-                    Excelencia operativa: productividad y mejora continua.
-                  </li>
-                  <li>
-                    Cumplimiento: planificación realista y reportes al cliente.
-                  </li>
-                  <li>
-                    Sostenibilidad: manejo responsable de RCD y respeto
-                    normativo.
-                  </li>
+                  <li>Integridad y transparencia: trazabilidad de origen y disposición.</li>
+                  <li>Seguridad ante todo: HSE como cultura.</li>
+                  <li>Excelencia operativa: productividad y mejora continua.</li>
+                  <li>Cumplimiento: planificación realista y reportes al cliente.</li>
+                  <li>Sostenibilidad: manejo responsable de RCD y respeto normativo.</li>
                 </ul>
               </HoverCard>
 
               <HoverCard>
-                <h3 className="text-lg font-semibold text-gray-900">
-                  Nuestros diferenciales
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900">Nuestros diferenciales</h3>
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                  <li>
-                    Equipo propio y disponibilidad: mayor control del
-                    cronograma.
-                  </li>
-                  <li>
-                    Calidad verificada: materiales con certificados y ensayos.
-                  </li>
-                  <li>
-                    Documentación al día: pólizas, hojas de vida y permisos.
-                  </li>
-                  <li>
-                    Manifiestos de disposición final y manejo responsable de
-                    RCD.
-                  </li>
+                  <li>Equipo propio y disponibilidad.</li>
+                  <li>Calidad verificada: certificados y ensayos.</li>
+                  <li>Documentación al día: pólizas, hojas de vida y permisos.</li>
+                  <li>Manifiestos de disposición final y manejo de RCD.</li>
                   <li>Atención local y tiempos de respuesta ágiles.</li>
                 </ul>
               </HoverCard>
@@ -1205,131 +1309,138 @@ export default function App() {
           </div>
         </section>
 
-        {/* ===== CAPACIDADES ===== */}
-        <section
-          id="capacidades"
-          className="scroll-mt-24 py-16 md:py-24 bg-white"
-        >
-          <div className="max-w-6xl mx-auto px-4">
+        {/* CAPACIDADES */}
+        <section id="capacidades" className="scroll-mt-24 py-14 md:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4">
             <FadeIn>
-              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-                Capacidades principales
-              </h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Capacidades principales</h2>
               <p className="mt-3 text-gray-600">
-                Soluciones integrales de obra y suministro para acompañar todo
-                el ciclo del proyecto.
+                Soluciones integrales de obra y suministro para acompañar todo el ciclo del proyecto.
               </p>
             </FadeIn>
 
             <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <HoverCard delay={0.02}>
-                <div className="flex items-center gap-3">
-                  <Layers size={20} />
-                  <h3 className="font-semibold text-gray-900">
-                    Movimientos de tierra
-                  </h3>
-                </div>
-                <p className="mt-2 text-sm text-gray-700">
-                  Excavación, corte, relleno, conformación de taludes,
-                  transporte y disposición.
-                </p>
-              </HoverCard>
-
-              <HoverCard delay={0.04}>
-                <div className="flex items-center gap-3">
-                  <Building2 size={20} />
-                  <h3 className="font-semibold text-gray-900">
-                    Ejecución de obras civiles
-                  </h3>
-                </div>
-                <p className="mt-2 text-sm text-gray-700">
-                  Estructuras menores, drenajes, muros, andenes y espacio
-                  público.
-                </p>
-              </HoverCard>
-
-              <HoverCard delay={0.06}>
-                <div className="flex items-center gap-3">
-                  <Wrench size={20} />
-                  <h3 className="font-semibold text-gray-900">Ferretería</h3>
-                </div>
-                <p className="mt-2 text-sm text-gray-700">
-                  Gestión de materiales desde canteras certificadas y soporte
-                  documental.
-                </p>
-              </HoverCard>
-
-              <HoverCard delay={0.08}>
-                <div className="flex items-center gap-3">
-                  <Truck size={20} />
-                  <h3 className="font-semibold text-gray-900">
-                    Alquiler de maquinaria
-                  </h3>
-                </div>
-                <p className="mt-2 text-sm text-gray-700">
-                  Retroexcavadoras, compactadores, bulldozers y más, con
-                  operador.
-                </p>
-              </HoverCard>
-
-              <HoverCard delay={0.1}>
-                <div className="flex items-center gap-3">
-                  <Package size={20} />
-                  <h3 className="font-semibold text-gray-900">
-                    Venta de materiales
-                  </h3>
-                </div>
-                <p className="mt-2 text-sm text-gray-700">
-                  Suministro confiable desde canteras de alta calidad (ensayos y
-                  certificados).
-                </p>
-              </HoverCard>
-
-              <HoverCard delay={0.12}>
-                <div className="flex items-center gap-3">
-                  <Hammer size={20} />
-                  <h3 className="font-semibold text-gray-900">Interventoría</h3>
-                </div>
-                <p className="mt-2 text-sm text-gray-700">
-                  Acompañamiento técnico y control de calidad durante la
-                  ejecución.
-                </p>
-              </HoverCard>
+              {[
+                {
+                  icon: Layers,
+                  title: "Movimientos de tierra",
+                  text: "Excavación, corte, relleno, conformación de taludes, transporte y disposición.",
+                },
+                {
+                  icon: Building2,
+                  title: "Ejecución de obras civiles",
+                  text: "Estructuras menores, drenajes, muros, andenes y espacio público.",
+                },
+                {
+                  icon: Wrench,
+                  title: "Ferretería",
+                  text: "Gestión de materiales desde canteras certificadas y soporte documental.",
+                },
+                {
+                  icon: Truck,
+                  title: "Alquiler de maquinaria",
+                  text: "Retroexcavadoras, compactadores, bulldozers y más, con operador.",
+                },
+                {
+                  icon: Package,
+                  title: "Venta de materiales",
+                  text: "Suministro confiable desde canteras de alta calidad (ensayos y certificados).",
+                },
+                {
+                  icon: Hammer,
+                  title: "Interventoría",
+                  text: "Acompañamiento técnico y control de calidad durante la ejecución.",
+                },
+              ].map(({ icon: Icon, title, text }, i) => (
+                <HoverCard delay={i * 0.04} key={title}>
+                  <div className="flex items-center gap-3">
+                    <Icon size={20} />
+                    <h3 className="font-semibold text-gray-900">{title}</h3>
+                  </div>
+                  <p className="mt-2 text-sm text-gray-700">{text}</p>
+                </HoverCard>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ===== ACTIVIDADES (CARRUSELES) ===== */}
+        {/* ACTIVIDADES */}
         <ActivitiesSection />
 
-        {/* ===== SERVICIOS ===== */}
-        <section
-          id="servicios"
-          className="scroll-mt-24 py-16 md:py-24 bg-gray-50"
-        >
-          <div className="max-w-6xl mx-auto px-4">
+        {/* SERVICIOS */}
+        <section id="servicios" className="scroll-mt-24 py-14 md:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4">
             <FadeIn>
-              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-                Servicios
-              </h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Servicios</h2>
               <p className="mt-3 text-gray-600 max-w-2xl">
-                Selecciona lo que necesitas. También ofrecemos alquiler de
-                maquinaria, venta de materiales e interventoría.
+                Selecciona lo que necesitas. También ofrecemos alquiler de maquinaria, venta de materiales e interventoría.
               </p>
             </FadeIn>
 
             <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {servicios.map((s, idx) => (
+              {[
+                {
+                  titulo: "Demolición",
+                  desc: "Planeación, permisos y ejecución segura.",
+                  bullets: [
+                    { icon: ShieldCheck, text: "Protocolos HSE y control perimetral." },
+                    { icon: ClipboardCheck, text: "Gestión de permisos y actas." },
+                    { icon: FileCheck2, text: "Manifiestos de RCD certificados." },
+                  ],
+                },
+                {
+                  titulo: "Excavaciones",
+                  desc: "Excavación y conformación de terrazas.",
+                  bullets: [
+                    { icon: Ruler, text: "Nivelación y replanteo topográfico." },
+                    { icon: Truck, text: "Flota propia para acarreo y disposición." },
+                    { icon: ShieldCheck, text: "Estabilidad de taludes y drenajes." },
+                  ],
+                },
+                {
+                  titulo: "Movimiento de tierra",
+                  desc: "Cortes, llenos y transporte.",
+                  bullets: [
+                    { icon: Layers, text: "Subrasante y compactación por capas." },
+                    { icon: TimerReset, text: "Ejecución bajo cronograma pactado." },
+                    { icon: FileCheck2, text: "Ensayos Proctor y densidades in situ." },
+                  ],
+                },
+                {
+                  titulo: "Urbanismo",
+                  desc: "Sardineles, andenes y paisajismo.",
+                  bullets: [
+                    { icon: Route, text: "Trazados precisos y acabados limpios." },
+                    { icon: ClipboardCheck, text: "Especificaciones y fichas técnicas." },
+                    { icon: ShieldCheck, text: "Señalización y orden en obra." },
+                  ],
+                },
+                {
+                  titulo: "Vías",
+                  desc: "Placas huella, pavimentos y subrasantes.",
+                  bullets: [
+                    { icon: Ruler, text: "Control de cotas y pendientes." },
+                    { icon: FileCheck2, text: "Base/subbase con certificados." },
+                    { icon: Hammer, text: "Juntas, curado y acabados de calidad." },
+                  ],
+                },
+                {
+                  titulo: "Edificaciones",
+                  desc: "Obras civiles y adecuaciones.",
+                  bullets: [
+                    { icon: Building2, text: "Estructuras menores y muros." },
+                    { icon: ClipboardCheck, text: "Control de materiales y actas." },
+                    { icon: ShieldCheck, text: "Seguridad y orden en frentes." },
+                  ],
+                },
+              ].map((s, idx) => (
                 <HoverCard key={s.titulo} delay={idx * 0.04}>
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {s.titulo}
-                  </h3>
+                  <h3 className="text-lg font-semibold text-gray-900">{s.titulo}</h3>
                   <p className="mt-2 text-sm text-gray-600">{s.desc}</p>
                   <ul className="mt-4 space-y-2 text-sm text-gray-700">
                     {s.bullets.map(({ icon: Icon, text }) => (
                       <li key={text} className="flex items-start gap-2">
-                        <Icon size={16} className="mt-0.5 text-emerald-600" />{" "}
-                        {text}
+                        <Icon size={16} className="mt-0.5 text-emerald-600" /> {text}
                       </li>
                     ))}
                   </ul>
@@ -1345,18 +1456,14 @@ export default function App() {
           </div>
         </section>
 
-        {/* ===== PROYECTOS ===== */}
-        <section id="proyectos" className="scroll-mt-24 py-16 md:py-24">
-          <div className="max-w-6xl mx-auto px-4">
+        {/* PROYECTOS */}
+        <section id="proyectos" className="scroll-mt-24 py-14 md:py-24">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4">
             <div className="flex items-end justify-between gap-4">
               <FadeIn>
                 <div>
-                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-                    Proyectos
-                  </h2>
-                  <p className="mt-3 text-gray-600">
-                    Listado completo con búsqueda, filtros y orden.
-                  </p>
+                  <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Proyectos</h2>
+                  <p className="mt-3 text-gray-600">Listado completo con búsqueda, filtros y orden.</p>
                 </div>
               </FadeIn>
             </div>
@@ -1372,17 +1479,13 @@ export default function App() {
           </div>
         </section>
 
-        {/* ===== CONTACTO (más ancho) ===== */}
-        <section id="contacto" className="scroll-mt-24 py-16 md:py-24">
-          <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-7">
+        {/* CONTACTO */}
+        <section id="contacto" className="scroll-mt-24 py-14 md:py-24">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 grid lg:grid-cols-2 gap-7">
             <FadeIn>
               <div className="lg:col-span-1">
-                <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-                  Hablemos!
-                </h2>
-                <p className="mt-3 text-gray-600">
-                  Cuéntanos tu idea y armamos una propuesta.
-                </p>
+                <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Hablemos!</h2>
+                <p className="mt-3 text-gray-600">Cuéntanos tu idea y armamos una propuesta.</p>
 
                 <div className="mt-6 space-y-3 text-sm">
                   <div className="flex items-center gap-2">
@@ -1402,9 +1505,9 @@ export default function App() {
               <div className="lg:col-span-2">
                 <form
                   onSubmit={handleSubmit}
-                  className="rounded-2xl border border-gray-200 p-6"
+                  className="rounded-2xl border border-gray-200 p-4 sm:p-6"
                 >
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm text-gray-600">Nombre</label>
                       <input
@@ -1443,12 +1546,22 @@ export default function App() {
           </div>
         </section>
 
-        {/* ===== FOOTER ===== */}
+        {/* FOOTER */}
         <footer className="border-t border-gray-100">
-          <div className="max-w-6xl mx-auto px-4 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
             <div className="text-gray-500">
-              © {new Date().getFullYear()} {CONFIG.nombre} Todos los derechos
-              reservados.
+              © {new Date().getFullYear()} {CONFIG.nombre} — Todos los derechos reservados.
+            </div>
+            <div className="flex items-center gap-4 text-gray-500">
+              <a href={CONFIG.redes.instagram} className="hover:text-gray-900">
+                Instagram
+              </a>
+              <a href={CONFIG.redes.linkedin} className="hover:text-gray-900">
+                LinkedIn
+              </a>
+              <a href={CONFIG.redes.web} className="hover:text-gray-900">
+                Sitio web
+              </a>
             </div>
           </div>
         </footer>
